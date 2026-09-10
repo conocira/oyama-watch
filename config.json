@@ -1,0 +1,9 @@
+{
+  "_説明": "各サイトで『大山駅 / 中古マンション / 3LDK / 新着順』で検索した結果ページのURLを貼ってください。複数ページ見たい場合は配列に追加。",
+  "sources": {
+    "suumo": ["ここにSUUMOの検索結果URLを貼る"],
+    "homes": ["ここにHOME'Sの検索結果URLを貼る"],
+    "athome": ["ここにat homeの検索結果URLを貼る"]
+  },
+  "notify_when_no_change": false
+}

@@ -1,0 +1,30 @@
+name: 大山3LDKウォッチ
+
+on:
+  schedule:
+    - cron: "0 22 * * *"   # UTC 22:00 = 日本時間 朝7:00
+  workflow_dispatch:        # 手動実行ボタン
+
+permissions:
+  contents: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python watcher.py
+        env:
+          LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+          LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
+      - name: 前回結果を保存
+        run: |
+          git config user.name "watcher-bot"
+          git config user.email "bot@example.com"
+          git add state.json
+          git diff --cached --quiet || git commit -m "update state $(date -u +%F)"
+          git push
