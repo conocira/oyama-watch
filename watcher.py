@@ -79,6 +79,17 @@ def is_3ldk(text: str) -> bool:
     return bool(re.search(r"3\s*LDK", normalized, re.I))
 
 
+def first_image(img) -> str | None:
+    """img要素から実際の画像URLを取り出す(遅延読み込みでsrcがダミーの場合に対応)"""
+    if not img:
+        return None
+    for attr in ("data-original", "rel", "src"):
+        v = img.get(attr)
+        if v and not v.startswith("data:"):
+            return v
+    return None
+
+
 # ---------- 各サイトのパーサー ----------
 def parse_suumo(html: str, base: str) -> list[dict]:
     soup = BeautifulSoup(html, "html.parser")
@@ -95,6 +106,7 @@ def parse_suumo(html: str, base: str) -> list[dict]:
         layout = info.get("間取り", "")
         if not is_3ldk(layout):
             continue
+        image = first_image(unit.select_one(".property_unit-object img"))
         out.append(
             {
                 "site": "SUUMO",
@@ -105,6 +117,7 @@ def parse_suumo(html: str, base: str) -> list[dict]:
                 "layout": layout,
                 "built": info.get("築年月", ""),
                 "access": info.get("沿線・駅", info.get("交通", "")),
+                "image": image,
             }
         )
     return out
@@ -130,6 +143,7 @@ def parse_homes(html: str, base: str) -> list[dict]:
         space_text = space_el.get_text(" ", strip=True)
         if not is_3ldk(space_text):
             continue
+        image = first_image(card.select_one(".bukkenPhoto img"))
         out.append(
             {
                 "site": "HOME'S",
@@ -140,6 +154,7 @@ def parse_homes(html: str, base: str) -> list[dict]:
                 "layout": "3LDK",
                 "built": "",
                 "access": traffic_el.get_text(strip=True) if traffic_el else "",
+                "image": image,
             }
         )
 
@@ -150,6 +165,7 @@ def parse_homes(html: str, base: str) -> list[dict]:
             continue
         building_url = urljoin(base, head_link["href"])
         building_name = name_el.get_text(strip=True)
+        building_image = first_image(group.select_one(".bukkenPhoto img"))
         rows = group.select("table.unitSummary > tbody > tr[data-mbtg-alias='cMansion']")
         for i, row in enumerate(rows):
             info = {}
@@ -161,6 +177,7 @@ def parse_homes(html: str, base: str) -> list[dict]:
             if not is_3ldk(layout):
                 continue
             url = building_url if len(rows) == 1 else f"{building_url}#room{i + 1}"
+            image = first_image(row.select_one(".displayPic img")) or building_image
             out.append(
                 {
                     "site": "HOME'S",
@@ -171,6 +188,7 @@ def parse_homes(html: str, base: str) -> list[dict]:
                     "layout": layout,
                     "built": "",
                     "access": "",
+                    "image": image,
                 }
             )
     return out
@@ -195,6 +213,7 @@ def parse_athome(html: str, base: str) -> list[dict]:
         layout = info.get("間取り", "")
         if not is_3ldk(layout):
             continue
+        image = first_image(card.select_one(".swiper-slide img"))
         out.append(
             {
                 "site": "at home",
@@ -204,6 +223,7 @@ def parse_athome(html: str, base: str) -> list[dict]:
                 "area": parse_area(info.get("専有面積", "")),
                 "layout": unicodedata.normalize("NFKC", layout),
                 "built": info.get("築年月", ""),
+                "image": image,
                 "access": info.get("交通", ""),
             }
         )
@@ -258,6 +278,8 @@ def update_history(current: dict, prev: dict) -> tuple[dict, list]:
                 "status": "掲載中",
             }
             hist[url] = h
+        if it.get("image"):
+            h["image"] = it["image"]
         h["last_seen"] = today
         h["status"] = "掲載中"
         h.pop("ended", None)

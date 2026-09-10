@@ -131,7 +131,9 @@ section{margin:12px;background:var(--card);border:1px solid var(--line);border-r
 h2{font-size:15px;margin:0 0 10px}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;margin-bottom:12px}
 .kpi{background:var(--bg);border-radius:8px;padding:9px}.kpi b{display:block;font-size:18px}.kpi span{font-size:11px;color:var(--mute)}
-.card{border-top:1px solid var(--line);padding:11px 0}.card:first-child{border-top:0}
+.card{display:flex;gap:10px;border-top:1px solid var(--line);padding:11px 0}.card:first-child{border-top:0}
+.card .thumb{flex:none;width:84px;height:63px;border-radius:8px;object-fit:cover;background:var(--bg)}
+.card .body{min-width:0;flex:1}
 .name{font-weight:600}.price{font-size:17px;font-weight:700;margin-top:3px}
 .meta{color:var(--mute);font-size:12px;margin-top:3px}
 .tag{display:inline-block;font-size:11px;padding:2px 7px;border-radius:99px;color:#fff;margin-left:6px;white-space:nowrap}
@@ -215,16 +217,26 @@ if (D.timeline.length > 1) {
   document.getElementById('tl').outerHTML = '<p class="small">推移グラフは数日分たまると表示されます。</p>';
 }
 
+const thumb = src => src
+  ? `<img class="thumb" src="${src}" loading="lazy" alt="" onerror="this.remove()">`
+  : '';
+
 document.getElementById('listings').innerHTML = D.listings.map(l => `<div class="card">
- <div class="name"><a href="${l.url}" target="_blank">${l.name}</a>${tag(l.pct)}</div>
- <div class="price">${yen(l.price)} <span class="small">${l.unit ? '@' + l.unit + '万/㎡' : ''}</span></div>
- <div class="meta">${l.area ? l.area + '㎡ ' : ''}${l.built || ''} [${l.site}]${l.first_seen ? ' / 初掲載 ' + l.first_seen : ''}${l.cuts ? ` / 値下げ${l.cuts}回（当初 ${yen(l.initial)}）` : ''}</div>
+ ${thumb(l.image)}
+ <div class="body">
+  <div class="name"><a href="${l.url}" target="_blank">${l.name}</a>${tag(l.pct)}</div>
+  <div class="price">${yen(l.price)} <span class="small">${l.unit ? '@' + l.unit + '万/㎡' : ''}</span></div>
+  <div class="meta">${l.area ? l.area + '㎡ ' : ''}${l.built || ''} [${l.site}]${l.first_seen ? ' / 初掲載 ' + l.first_seen : ''}${l.cuts ? ` / 値下げ${l.cuts}回（当初 ${yen(l.initial)}）` : ''}</div>
+ </div>
 </div>`).join('') || '<p class="small">まだデータがありません。</p>';
 
 document.getElementById('ended').innerHTML = D.ended.map(e => `<div class="card">
- <div class="name">${e.name}</div>
- <div class="price">${yen(e.final)}${e.initial && e.initial !== e.final ? ` <span class="small">当初 ${yen(e.initial)}（▼${(100-e.final/e.initial*100).toFixed(1)}%）</span>` : ''}</div>
- <div class="meta">${e.area ? e.area + '㎡ ' : ''}${e.built || ''} [${e.site}] / ${e.first_seen} 〜 ${e.ended}${e.days_listed != null ? `（${e.days_listed}日）` : ''}${e.cuts ? ` / 値下げ${e.cuts}回` : ''}</div>
+ ${thumb(e.image)}
+ <div class="body">
+  <div class="name">${e.name}</div>
+  <div class="price">${yen(e.final)}${e.initial && e.initial !== e.final ? ` <span class="small">当初 ${yen(e.initial)}（▼${(100-e.final/e.initial*100).toFixed(1)}%）</span>` : ''}</div>
+  <div class="meta">${e.area ? e.area + '㎡ ' : ''}${e.built || ''} [${e.site}] / ${e.first_seen} 〜 ${e.ended}${e.days_listed != null ? `（${e.days_listed}日）` : ''}${e.cuts ? ` / 値下げ${e.cuts}回` : ''}</div>
+ </div>
 </div>`).join('') || '<p class="small">掲載終了した物件はまだありません。数週間たつと出てきます。</p>';
 
 document.getElementById('bld').innerHTML = D.buildings.map(b => `<details>
