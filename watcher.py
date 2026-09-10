@@ -27,6 +27,7 @@ HEADERS = {
     "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
 }
 STATE_FILE = "state.json"
+HISTORY_FILE = "history.json"
 CONFIG_FILE = "config.json"
 JST = timezone(timedelta(hours=9))
 
@@ -223,6 +224,80 @@ def dedupe_key(item: dict) -> str:
     return f"{item.get('price')}|{area}"
 
 
+# ---------- 履歴 ----------
+def norm_name(name: str) -> str:
+    """棟名の正規化: 全角→半角、空白除去、号室や余計な語を落とす"""
+    n = unicodedata.normalize("NFKC", name or "")
+    n = re.sub(r"\s+", "", n)
+    n = re.sub(r"(\d+階|\d+号室|部屋|中古マンション).*$", "", n)
+    return n[:40] or "不明"
+
+
+def update_history(current: dict, prev: dict) -> tuple[dict, list]:
+    """
+    掲載中の物件の価格推移を記録し、消えた物件を「掲載終了」にする。
+    戻り値: (履歴全体, 今回消えた物件のリスト)
+    """
+    today = datetime.now(JST).strftime("%Y-%m-%d")
+    hist = {}
+    if os.path.exists(HISTORY_FILE):
+        with open(HISTORY_FILE, encoding="utf-8") as f:
+            hist = json.load(f)
+
+    for url, it in current.items():
+        h = hist.get(url)
+        if h is None:
+            h = {
+                "name": it["name"],
+                "building": norm_name(it["name"]),
+                "site": it["site"],
+                "area": it.get("area"),
+                "built": it.get("built"),
+                "first_seen": today,
+                "prices": [],
+                "status": "掲載中",
+            }
+            hist[url] = h
+        h["last_seen"] = today
+        h["status"] = "掲載中"
+        h.pop("ended", None)
+        h.pop("days_listed", None)
+        if it.get("price") and (not h["prices"] or h["prices"][-1]["price"] != it["price"]):
+            h["prices"].append({"date": today, "price": it["price"]})
+
+    ended = []
+    for url in prev:
+        h = hist.get(url)
+        if url not in current and h and h.get("status") == "掲載中":
+            h["status"] = "掲載終了"
+            h["ended"] = today
+            try:
+                d0 = datetime.strptime(h["first_seen"], "%Y-%m-%d")
+                h["days_listed"] = (datetime.strptime(today, "%Y-%m-%d") - d0).days
+            except Exception:
+                h["days_listed"] = None
+            ended.append({**h, "url": url})
+
+    with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+        json.dump(hist, f, ensure_ascii=False, indent=1)
+    return hist, ended
+
+
+def fmt_ended(h: dict) -> str:
+    first = h["prices"][0]["price"] if h.get("prices") else None
+    last = h["prices"][-1]["price"] if h.get("prices") else None
+    line = f"・{h['name']}"
+    if h.get("area"):
+        line += f" {h['area']}㎡"
+    if last:
+        line += f"\n  最終 {last:,}万円"
+        if first and first != last:
+            line += f"（当初 {first:,}万円 / 値下げ{len(h['prices']) - 1}回）"
+    if h.get("days_listed") is not None:
+        line += f"\n  掲載 {h['days_listed']}日間 [{h['site']}]"
+    return line
+
+
 # ---------- 相場チェック ----------
 def unit_price(item: dict) -> float | None:
     """万円/㎡"""
@@ -315,6 +390,8 @@ def main():
                 current[it["url"]] = it
             time.sleep(3)  # サイトへの負荷を抑える
 
+    hist, ended = update_history(current, prev)
+
     # 差分
     new_items, price_drops = [], []
     for url, it in current.items():
@@ -344,7 +421,10 @@ def main():
     if price_drops:
         lines.append(f"\n📉 値下げ {len(price_drops)}件")
         lines += [fmt(i, old, median) for i, old in price_drops]
-    if not merged and not price_drops:
+    if ended:
+        lines.append(f"\n🏁 掲載終了 {len(ended)}件（成約または取り下げ）")
+        lines += [fmt_ended(h) for h in ended]
+    if not merged and not price_drops and not ended:
         lines.append("\n本日の新着・値下げはありません")
     if errors:
         lines.append("\n⚠ " + " / ".join(errors))
@@ -355,7 +435,7 @@ def main():
         if errors:
             text += "\n⚠ " + " / ".join(errors)
         push_line(text)
-    elif merged or price_drops or config.get("notify_when_no_change", False):
+    elif merged or price_drops or ended or config.get("notify_when_no_change", False):
         push_line("\n".join(lines))
     else:
         print("[info] 変化なし、通知スキップ")
