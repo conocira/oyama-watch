@@ -4,11 +4,14 @@
 - 前回結果(state.json)と比較して「新着」「値下げ」を抽出
 - 3サイトの重複を統合して LINE に通知
 """
+from __future__ import annotations
+
 import json
 import os
 import re
 import sys
 import time
+import unicodedata
 from datetime import datetime, timezone, timedelta
 from urllib.parse import urljoin
 
@@ -17,10 +20,11 @@ from bs4 import BeautifulSoup
 
 HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-        "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 "
+        "(KHTML, like Gecko) Version/17.4 Safari/605.1.15"
     ),
-    "Accept-Language": "ja,en;q=0.8",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+    "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
 }
 STATE_FILE = "state.json"
 CONFIG_FILE = "config.json"
@@ -28,9 +32,17 @@ JST = timezone(timedelta(hours=9))
 
 
 # ---------- 共通ユーティリティ ----------
-def fetch(url: str) -> str | None:
+SITE_HOME = {
+    "suumo": "https://suumo.jp/",
+    "homes": "https://www.homes.co.jp/",
+    "athome": "https://www.athome.co.jp/",
+}
+
+
+def fetch(url: str, referer: str | None = None) -> str | None:
     try:
-        r = requests.get(url, headers=HEADERS, timeout=30)
+        headers = {**HEADERS, "Referer": referer} if referer else HEADERS
+        r = requests.get(url, headers=headers, timeout=30)
         if r.status_code != 200:
             print(f"[warn] {url} -> HTTP {r.status_code}")
             return None
@@ -61,7 +73,9 @@ def parse_area(text: str) -> float | None:
 
 
 def is_3ldk(text: str) -> bool:
-    return bool(re.search(r"3\s*LDK", text or "", re.I))
+    """全角(３ＬＤＫ)も半角(3LDK)も判定できるよう正規化してから比較"""
+    normalized = unicodedata.normalize("NFKC", text or "")
+    return bool(re.search(r"3\s*LDK", normalized, re.I))
 
 
 # ---------- 各サイトのパーサー ----------
@@ -95,51 +109,101 @@ def parse_suumo(html: str, base: str) -> list[dict]:
     return out
 
 
-def parse_generic(html: str, base: str, site: str, link_pattern: str) -> list[dict]:
+def parse_homes(html: str, base: str) -> list[dict]:
     """
-    HOME'S / at home 用のゆるいパーサー。
-    物件詳細へのリンクを含むブロックごとに、テキストから価格・面積・間取りを拾う。
-    サイト側のHTML変更に比較的強いが、精度はSUUMO専用パーサーより落ちる。
+    HOME'S 専用パーサー。
+    2種類のブロックが混在する: 単独物件カード(mod-listKks-sale)と、
+    同一建物に複数戸ある場合の棟ブロック(mod-mergeBuilding--sale、内部に戸ごとの行を持つ)。
     """
     soup = BeautifulSoup(html, "html.parser")
-    seen, out = set(), []
-    for a in soup.find_all("a", href=re.compile(link_pattern)):
-        url = urljoin(base, a["href"]).split("?")[0]
-        if url in seen:
+    out = []
+
+    for card in soup.select("div.mod-listKks-sale.cMansion"):
+        name_el = card.select_one(".bukkenName")
+        link_el = card.select_one("a.detailLink")
+        price_el = card.select_one("td.price .num")
+        space_el = card.select_one("td.space")
+        traffic_el = card.select_one("td.traffic")
+        if not (name_el and link_el and price_el and space_el):
             continue
-        # リンクを含む親ブロックを数段上まで遡ってテキストを集める
-        block = a
-        text = ""
-        for _ in range(6):
-            block = block.parent
-            if block is None:
-                break
-            text = block.get_text(" ", strip=True)
-            if "万円" in text and re.search(r"[LDK]", text):
-                break
-        if not is_3ldk(text):
+        space_text = space_el.get_text(" ", strip=True)
+        if not is_3ldk(space_text):
             continue
-        price = parse_price(re.search(r"(?:\d+億)?[\d,]+万円", text).group(0)) if re.search(
-            r"(?:\d+億)?[\d,]+万円", text
-        ) else None
-        if price is None:
-            continue
-        seen.add(url)
-        name = a.get_text(strip=True) or text[:40]
-        built = ""
-        m = re.search(r"(築\d+年|\d{4}年\d{1,2}月)", text)
-        if m:
-            built = m.group(1)
         out.append(
             {
-                "site": site,
-                "url": url,
-                "name": name[:60],
-                "price": price,
-                "area": parse_area(text),
+                "site": "HOME'S",
+                "url": urljoin(base, link_el["href"]),
+                "name": name_el.get_text(strip=True),
+                "price": parse_price(price_el.get_text(strip=True) + "万円"),
+                "area": parse_area(space_text),
                 "layout": "3LDK",
-                "built": built,
-                "access": "",
+                "built": "",
+                "access": traffic_el.get_text(strip=True) if traffic_el else "",
+            }
+        )
+
+    for group in soup.select("div.mod-mergeBuilding--sale"):
+        head_link = group.select_one("h3.heading a")
+        name_el = group.select_one("h3.heading .bukkenName")
+        if not (head_link and head_link.get("href") and name_el):
+            continue
+        building_url = urljoin(base, head_link["href"])
+        building_name = name_el.get_text(strip=True)
+        rows = group.select("table.unitSummary > tbody > tr[data-mbtg-alias='cMansion']")
+        for i, row in enumerate(rows):
+            info = {}
+            for tr in row.select("table.verticalTable tr"):
+                cells = tr.find_all(["th", "td"])
+                for j in range(0, len(cells) - 1, 2):
+                    info[cells[j].get_text(strip=True)] = cells[j + 1].get_text(" ", strip=True)
+            layout = info.get("間取り", "")
+            if not is_3ldk(layout):
+                continue
+            url = building_url if len(rows) == 1 else f"{building_url}#room{i + 1}"
+            out.append(
+                {
+                    "site": "HOME'S",
+                    "url": url,
+                    "name": building_name,
+                    "price": parse_price(info.get("価格", "")),
+                    "area": parse_area(info.get("専有面積", "")),
+                    "layout": layout,
+                    "built": "",
+                    "access": "",
+                }
+            )
+    return out
+
+
+def parse_athome(html: str, base: str) -> list[dict]:
+    """at home 専用パーサー。各物件は div.card-box 単位で表示される。"""
+    soup = BeautifulSoup(html, "html.parser")
+    out = []
+    for card in soup.find_all("div", class_="card-box"):
+        a = card.find("a", href=re.compile(r"^/mansion/\d+/"))
+        if not a:
+            continue
+        titles = card.select(".title-wrap__title-text")
+        name = titles[-1].get_text(strip=True) if titles else ""
+        price_el = card.select_one(".property-price")
+        info = {}
+        for block in card.select(".property-detail-table__block"):
+            strong, span = block.find("strong"), block.find("span")
+            if strong and span:
+                info[strong.get_text(strip=True)] = span.get_text(" ", strip=True)
+        layout = info.get("間取り", "")
+        if not is_3ldk(layout):
+            continue
+        out.append(
+            {
+                "site": "at home",
+                "url": urljoin(base, a["href"].split("?")[0]),
+                "name": name,
+                "price": parse_price(price_el.get_text(" ", strip=True)) if price_el else None,
+                "area": parse_area(info.get("専有面積", "")),
+                "layout": unicodedata.normalize("NFKC", layout),
+                "built": info.get("築年月", ""),
+                "access": info.get("交通", ""),
             }
         )
     return out
@@ -147,8 +211,8 @@ def parse_generic(html: str, base: str, site: str, link_pattern: str) -> list[di
 
 PARSERS = {
     "suumo": lambda html, url: parse_suumo(html, url),
-    "homes": lambda html, url: parse_generic(html, url, "HOME'S", r"/mansion/b-\d+"),
-    "athome": lambda html, url: parse_generic(html, url, "at home", r"/mansion/\d+/"),
+    "homes": lambda html, url: parse_homes(html, url),
+    "athome": lambda html, url: parse_athome(html, url),
 }
 
 
@@ -239,7 +303,7 @@ def main():
         if not parser:
             continue
         for url in urls:
-            html = fetch(url)
+            html = fetch(url, referer=SITE_HOME.get(site))
             if not html:
                 errors.append(f"{site}: 取得失敗")
                 continue
