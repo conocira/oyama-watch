@@ -509,15 +509,15 @@
   "built": "",
   "access": "東武東上線 大山駅 徒歩7分"
  },
- "https://www.homes.co.jp/mansion/b-1581150000011/": {
+ "https://www.homes.co.jp/mansion/b-35007060000124/": {
   "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-1581150000011/",
-  "name": "カテリーナ池袋西プラザタワー",
-  "price": 9699,
-  "area": 75.96,
+  "url": "https://www.homes.co.jp/mansion/b-35007060000124/",
+  "name": "ジオ板橋大山",
+  "price": 8790,
+  "area": 68.61,
   "layout": "3LDK",
   "built": "",
-  "access": "東武東上線 大山駅 徒歩15分"
+  "access": ""
  },
  "https://www.homes.co.jp/mansion/b-1267650039045/#room1": {
   "site": "HOME'S",
@@ -775,16 +775,6 @@
   "name": "ライオンズ板橋氷川町レジデンス",
   "price": 9980,
   "area": 80.75,
-  "layout": "3LDK",
-  "built": "",
-  "access": ""
- },
- "https://www.homes.co.jp/mansion/b-35007060000124/": {
-  "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-35007060000124/",
-  "name": "ジオ板橋大山",
-  "price": 8790,
-  "area": 68.61,
   "layout": "3LDK",
   "built": "",
   "access": ""
