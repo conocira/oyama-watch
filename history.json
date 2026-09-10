@@ -80,9 +80,11 @@
     "price": 8699
    }
   ],
-  "status": "掲載中",
+  "status": "掲載終了",
   "last_seen": "2026-09-11",
-  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F130%2F21640130%2F21640130_0005.jpg&w=192&h=144"
+  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F130%2F21640130%2F21640130_0005.jpg&w=192&h=144",
+  "ended": "2026-09-11",
+  "days_listed": 1
  },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21621695/": {
   "name": "9/3価格下がりました 8980万より200万円↓ 初購入をやさしくサポートします",
@@ -403,9 +405,11 @@
     "price": 3999
    }
   ],
-  "status": "掲載中",
+  "status": "掲載終了",
   "last_seen": "2026-09-11",
-  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F736%2F21293736%2F21293736_0001.jpg&w=192&h=144"
+  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F736%2F21293736%2F21293736_0001.jpg&w=192&h=144",
+  "ended": "2026-09-11",
+  "days_listed": 1
  },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_20156959/": {
   "name": "熊野町（大山駅） 4480万円",
@@ -692,9 +696,11 @@
     "price": 8999
    }
   ],
-  "status": "掲載中",
+  "status": "掲載終了",
   "last_seen": "2026-09-11",
-  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F054%2F21342054%2F21342054_0036.jpg&w=192&h=144"
+  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F054%2F21342054%2F21342054_0036.jpg&w=192&h=144",
+  "ended": "2026-09-11",
+  "days_listed": 1
  },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21363150/": {
   "name": "≪いまからのご見学可能です≫ご自宅送迎によるご来店・ご内覧サービス実施中",
@@ -809,6 +815,10 @@
    {
     "date": "2026-09-10",
     "price": 10480
+   },
+   {
+    "date": "2026-09-11",
+    "price": 9980
    }
   ],
   "status": "掲載中",
@@ -862,10 +872,9 @@
     "price": 10800
    }
   ],
-  "status": "掲載終了",
-  "last_seen": "2026-09-10",
-  "ended": "2026-09-11",
-  "days_listed": 1
+  "status": "掲載中",
+  "last_seen": "2026-09-11",
+  "image": "https://image3.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F139285%2Fsale%2F1629%2F2%2F2%2Fgwrf.jpg&width=208&height=138"
  },
  "https://www.homes.co.jp/mansion/b-35007060000124/": {
   "name": "ジオ板橋大山",
@@ -897,10 +906,9 @@
     "price": 8999
    }
   ],
-  "status": "掲載終了",
-  "last_seen": "2026-09-10",
-  "ended": "2026-09-11",
-  "days_listed": 1
+  "status": "掲載中",
+  "last_seen": "2026-09-11",
+  "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F126765%2Fsale%2F39045%2F11%2F3%2Fvh78.jpg"
  },
  "https://www.homes.co.jp/mansion/b-1267650039045/#room2": {
   "name": "シーアイマンション池袋西",
@@ -915,10 +923,9 @@
     "price": 8699
    }
   ],
-  "status": "掲載終了",
-  "last_seen": "2026-09-10",
-  "ended": "2026-09-11",
-  "days_listed": 1
+  "status": "掲載中",
+  "last_seen": "2026-09-11",
+  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F135811%2Fsale%2F12289%2F11%2F3%2Fyje0.jpg"
  },
  "https://www.homes.co.jp/mansion/b-1484420001221/": {
   "name": "日神パレステージ板橋本町第5",
@@ -1781,6 +1788,10 @@
    {
     "date": "2026-09-10",
     "price": 8999
+   },
+   {
+    "date": "2026-09-11",
+    "price": 8699
    }
   ],
   "status": "掲載中",
@@ -2191,9 +2202,11 @@
     "price": 8999
    }
   ],
-  "status": "掲載中",
+  "status": "掲載終了",
   "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F126765%2Fsale%2F39045%2F11%2F3%2Fvh78.jpg",
-  "last_seen": "2026-09-11"
+  "last_seen": "2026-09-11",
+  "ended": "2026-09-11",
+  "days_listed": 0
  },
  "https://www.homes.co.jp/mansion/b-1358110012289/#room2": {
   "name": "シーアイマンション池袋西",
@@ -2208,8 +2221,27 @@
     "price": 8699
    }
   ],
-  "status": "掲載中",
+  "status": "掲載終了",
   "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F135811%2Fsale%2F12289%2F11%2F3%2Fyje0.jpg",
+  "last_seen": "2026-09-11",
+  "ended": "2026-09-11",
+  "days_listed": 0
+ },
+ "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21674977/": {
+  "name": "永住無でも金利0.95％！中国語対応可！期間限定サービス有！【諸費用】参照",
+  "building": "永住無でも金利0.95%!中国語対応可!期間限定サービス有!【諸費用】参照",
+  "site": "SUUMO",
+  "area": 66.47,
+  "built": "1994年3月",
+  "first_seen": "2026-09-11",
+  "prices": [
+   {
+    "date": "2026-09-11",
+    "price": 8699
+   }
+  ],
+  "status": "掲載中",
+  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F977%2F21674977%2F21674977_0005.jpg&w=192&h=144",
   "last_seen": "2026-09-11"
  }
 }
