@@ -5,5 +5,10 @@
     "homes": ["https://www.homes.co.jp/mansion/chuko/tokyo/oyama_04748-st/list/?cond%5Bmadori%5D%5B35%5D=35&cond%5Bsortby%5D=newdate"],
     "athome": ["https://www.athome.co.jp/mansion/chuko/tokyo/list/?pref=13&stations=tobutojo_2270-2270040&basic=kp120,kp001,km015,kt424,kt101,ke001,kn001,kj001&kod=&q=1&sort=33&limit=50"]
   },
+  "age_buckets": [
+    ["築20年未満", 0, 20],
+    ["築20〜35年", 20, 35],
+    ["築35年以上", 35, 200]
+  ],
   "notify_when_no_change": false
 }

@@ -320,7 +320,18 @@ def fmt_ended(h: dict) -> str:
     return line
 
 
-# ---------- 相場チェック ----------
+# ---------- 相場チェック（築年帯ごとに比較） ----------
+# 掲載数が20件前後なので、細かく割ると各帯が1〜2件になり比較できない。
+# まず粗い3区分で判定し、件数が増えてきたら config.json で細かくできる。
+DEFAULT_BUCKETS = [
+    ["築20年未満", 0, 20],
+    ["築20〜35年", 20, 35],
+    ["築35年以上", 35, 200],
+]
+MIN_PEERS = 3  # 同じ築年帯にこの件数未満しかなければ全体中央値にフォールバック
+BUCKETS = DEFAULT_BUCKETS  # config.json の age_buckets で上書き
+
+
 def unit_price(item: dict) -> float | None:
     """万円/㎡"""
     if item.get("price") and item.get("area"):
@@ -328,19 +339,66 @@ def unit_price(item: dict) -> float | None:
     return None
 
 
-def market_median(items: list[dict]) -> float | None:
-    vals = sorted(v for v in (unit_price(i) for i in items) if v)
-    if len(vals) < 3:
+def built_year(built: str) -> int | None:
+    """'2005年3月' や '築20年' から西暦を得る"""
+    m = re.search(r"(\d{4})年", built or "")
+    if m:
+        return int(m.group(1))
+    m = re.search(r"築(\d+)年", built or "")
+    if m:
+        return datetime.now(JST).year - int(m.group(1))
+    return None
+
+
+def age_bucket(item: dict, buckets=None) -> str:
+    by = built_year(item.get("built", ""))
+    if not by:
+        return "築年不明"
+    age = datetime.now(JST).year - by
+    for name, lo, hi in (buckets or DEFAULT_BUCKETS):
+        if lo <= age < hi:
+            return name
+    return "築年不明"
+
+
+def median(vals: list[float]) -> float | None:
+    vals = sorted(vals)
+    if not vals:
         return None
     n = len(vals)
     return vals[n // 2] if n % 2 else (vals[n // 2 - 1] + vals[n // 2]) / 2
 
 
-def market_label(item: dict, median: float | None) -> str:
+def bucket_medians(items: list[dict], buckets=None) -> dict:
+    """
+    築年帯ごとの㎡単価中央値。件数が足りない帯は載せない。
+    "_all" に全体中央値を入れておき、フォールバック用に使う。
+    """
+    groups = {}
+    all_vals = []
+    for it in items:
+        up = unit_price(it)
+        if up:
+            groups.setdefault(age_bucket(it, buckets), []).append(up)
+            all_vals.append(up)
+    out = {b: median(v) for b, v in groups.items() if len(v) >= MIN_PEERS and b != "築年不明"}
+    if len(all_vals) >= MIN_PEERS:
+        out["_all"] = median(all_vals)
+    return out
+
+
+def market_label(item: dict, meds: dict, buckets=None) -> str:
     up = unit_price(item)
-    if not up or not median:
-        return ""
-    diff = (up - median) / median * 100
+    b = age_bucket(item, buckets)
+    meds = meds or {}
+    ref = meds.get(b)
+    scope = f"{b}内"
+    if not ref:
+        ref = meds.get("_all")
+        scope = "全体比・築年帯の件数不足"
+    if not up or not ref:
+        return " ⚪判定不可"
+    diff = (up - ref) / ref * 100
     if diff <= -15:
         tag = "🟢割安"
     elif diff <= -5:
@@ -351,7 +409,7 @@ def market_label(item: dict, median: float | None) -> str:
         tag = "🟠やや高"
     else:
         tag = "🔴割高"
-    return f" {tag}({diff:+.0f}%)"
+    return f" {tag}({diff:+.0f}% / {scope})"
 
 
 # ---------- LINE通知 ----------
@@ -373,7 +431,7 @@ def push_line(text: str):
         print(f"[line] {r.status_code} {r.text[:200]}")
 
 
-def fmt(item: dict, old_price: int | None = None, median: float | None = None) -> str:
+def fmt(item: dict, old_price: int | None = None, meds: dict | None = None) -> str:
     price = f"{item['price']:,}万円" if item.get("price") else "価格不明"
     if old_price:
         price = f"{old_price:,}→{item['price']:,}万円 (▼{old_price - item['price']:,})"
@@ -381,13 +439,15 @@ def fmt(item: dict, old_price: int | None = None, median: float | None = None) -
     built = f" {item['built']}" if item.get("built") else ""
     up = unit_price(item)
     up_s = f" @{up:.0f}万/㎡" if up else ""
-    return f"・{item['name']}\n  {price}{area}{built}{up_s}{market_label(item, median)}\n  [{item['site']}] {item['url']}"
+    return f"・{item['name']}\n  {price}{area}{built}{up_s}{market_label(item, meds, BUCKETS)}\n  [{item['site']}] {item['url']}"
 
 
 # ---------- メイン ----------
 def main():
+    global BUCKETS
     with open(CONFIG_FILE, encoding="utf-8") as f:
         config = json.load(f)
+    BUCKETS = config.get("age_buckets") or DEFAULT_BUCKETS
     prev = {}
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, encoding="utf-8") as f:
@@ -434,15 +494,15 @@ def main():
         merged.append(it)
 
     today = datetime.now(JST).strftime("%m/%d")
-    median = market_median(list(current.values()))
-    med_s = f" / 相場中央値 {median:.0f}万円/㎡" if median else ""
+    meds = bucket_medians(list(current.values()), BUCKETS)
+    med_s = ("\n築年帯別 中央値: " + " / ".join(f"{b} {v:.0f}万" for b, v in sorted(meds.items()) if b != "_all")) if meds else ""
     lines = [f"🏠 大山 3LDK ウォッチ {today}", f"掲載中: {len(current)}件（3サイト合計）{med_s}"]
     if merged:
         lines.append(f"\n🆕 新着 {len(merged)}件")
-        lines += [fmt(i, median=median) for i in merged]
+        lines += [fmt(i, meds=meds) for i in merged]
     if price_drops:
         lines.append(f"\n📉 値下げ {len(price_drops)}件")
-        lines += [fmt(i, old, median) for i, old in price_drops]
+        lines += [fmt(i, old, meds) for i, old in price_drops]
     if ended:
         lines.append(f"\n🏁 掲載終了 {len(ended)}件（成約または取り下げ）")
         lines += [fmt_ended(h) for h in ended]

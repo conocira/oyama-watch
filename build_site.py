@@ -5,6 +5,7 @@ GitHub Pages で公開すると、スマホからいつでも見られるダッ�
 """
 import json
 import os
+import re
 import statistics
 from collections import defaultdict
 from datetime import datetime, timezone, timedelta
@@ -20,8 +21,33 @@ def load(path, default):
     return default
 
 
+DEFAULT_BUCKETS = [["築20年未満", 0, 20], ["築20〜35年", 20, 35], ["築35年以上", 35, 200]]
+MIN_PEERS = 3
+
+
 def unit(price, area):
     return round(price / area, 1) if price and area else None
+
+
+def built_year(built: str):
+    m = re.search(r"(\d{4})年", built or "")
+    if m:
+        return int(m.group(1))
+    m = re.search(r"築(\d+)年", built or "")
+    if m:
+        return datetime.now(JST).year - int(m.group(1))
+    return None
+
+
+def age_bucket(built: str, buckets):
+    by = built_year(built)
+    if not by:
+        return "築年不明"
+    age = datetime.now(JST).year - by
+    for name, lo, hi in buckets:
+        if lo <= age < hi:
+            return name
+    return "築年不明"
 
 
 def main():
@@ -29,24 +55,43 @@ def main():
     hist = load("history.json", {})
     now = datetime.now(JST)
 
-    # ---- 掲載中（割安順） ----
-    units = [u for u in (unit(i.get("price"), i.get("area")) for i in state.values()) if u]
-    median = round(statistics.median(units), 1) if len(units) >= 3 else None
+    # ---- 掲載中（築年帯ごとに割安判定） ----
+    cfg = load("config.json", {})
+    buckets = cfg.get("age_buckets") or DEFAULT_BUCKETS
+
+    groups = {}
+    units = []
+    for it in state.values():
+        u = unit(it.get("price"), it.get("area"))
+        if u:
+            groups.setdefault(age_bucket(it.get("built", ""), buckets), []).append(u)
+            units.append(u)
+    meds = {b: round(statistics.median(v), 1)
+            for b, v in groups.items() if len(v) >= MIN_PEERS and b != "築年不明"}
+    counts = {b: len(v) for b, v in groups.items()}
+    overall = round(statistics.median(units), 1) if len(units) >= MIN_PEERS else None
 
     listings = []
     for url, it in state.items():
         h = hist.get(url, {})
         u = unit(it.get("price"), it.get("area"))
+        b = age_bucket(it.get("built", ""), buckets)
+        ref, scope = meds.get(b), b + "内"
+        if ref is None:
+            ref, scope = overall, "全体比"
         prices = h.get("prices", [])
         listings.append({
             **it,
             "unit": u,
-            "pct": round((u - median) / median * 100) if (u and median) else None,
+            "bucket": b,
+            "scope": scope,
+            "ref": ref,
+            "pct": round((u - ref) / ref * 100) if (u and ref) else None,
             "first_seen": h.get("first_seen", ""),
             "cuts": max(0, len(prices) - 1),
             "initial": prices[0]["price"] if prices else None,
         })
-    listings.sort(key=lambda x: (x["pct"] if x["pct"] is not None else 999))
+    listings.sort(key=lambda x: (x["bucket"], x["pct"] if x["pct"] is not None else 999))
 
     # ---- 掲載終了 ----
     ended = []
@@ -94,7 +139,10 @@ def main():
 
     data = {
         "generated": now.strftime("%Y-%m-%d %H:%M"),
-        "median": median,
+        "median": overall,
+        "meds": meds,
+        "counts": counts,
+        "bucket_order": [b[0] for b in buckets] + ["築年不明"],
         "listings": listings,
         "ended": ended,
         "buildings": bld,
@@ -155,7 +203,8 @@ details{border-top:1px solid var(--line)}details summary{cursor:pointer;padding:
  <div class="kpis" id="k1"></div>
  <canvas id="tl" height="180"></canvas>
  <h2 style="margin-top:14px">掲載中の物件（割安順）</h2>
- <p class="small">判定は「掲載中の物件の㎡単価の中央値」との比較。市場全体の相場ではなく、今出ている物件の中での相対評価です。</p>
+ <p class="small">判定は<b>同じ築年帯の物件どうし</b>の㎡単価比較。築浅タワーと築古が混ざらないようにしています。同じ帯が3件未満のときは全体比に切り替わり、その旨を表示します。</p>
+ <div id="meds" class="small" style="margin-bottom:8px"></div>
  <div id="listings"></div>
 </section>
 
@@ -175,8 +224,7 @@ details{border-top:1px solid var(--line)}details summary{cursor:pointer;padding:
 <script>
 const D = __DATA__;
 const yen = v => v == null ? '-' : v.toLocaleString() + '万円';
-document.getElementById('sub').textContent =
-  `更新 ${D.generated}` + (D.median ? ` / 掲載中の中央値 ${D.median}万円/㎡` : '');
+document.getElementById('sub').textContent = `更新 ${D.generated}`;
 
 document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => {
   document.querySelectorAll('.tabs button').forEach(x => x.classList.remove('on'));
@@ -194,7 +242,7 @@ const tag = p => p == null ? '<span class="tag n">判定不可</span>'
 const S = D.stats;
 document.getElementById('k1').innerHTML = [
   [S.n_active + '件', '掲載中（3サイト）'],
-  [D.median ? D.median + '万' : '-', '中央値 万円/㎡'],
+  [Object.keys(D.meds).length + '帯', '築年帯別に判定中'],
   [S.n_ended + '件', '掲載終了（累計）'],
 ].map(([b, s]) => `<div class="kpi"><b>${b}</b><span>${s}</span></div>`).join('');
 
@@ -217,18 +265,28 @@ if (D.timeline.length > 1) {
   document.getElementById('tl').outerHTML = '<p class="small">推移グラフは数日分たまると表示されます。</p>';
 }
 
+document.getElementById('meds').innerHTML = D.bucket_order
+  .filter(b => D.counts[b])
+  .map(b => `${b} <b>${D.meds[b] ? D.meds[b] + '万/㎡' : '—'}</b>（${D.counts[b]}件）`)
+  .join(' ・ ') + (D.median ? ` ／ 全体 ${D.median}万/㎡` : '');
+
 const thumb = src => src
   ? `<img class="thumb" src="${src}" loading="lazy" alt="" onerror="this.remove()">`
   : '';
 
-document.getElementById('listings').innerHTML = D.listings.map(l => `<div class="card">
+const byBucket = {};
+D.listings.forEach(l => (byBucket[l.bucket] = byBucket[l.bucket] || []).push(l));
+document.getElementById('listings').innerHTML = D.bucket_order
+  .filter(b => byBucket[b])
+  .map(b => `<h3 style="font-size:13px;color:var(--mute);margin:16px 0 0">${b}（${byBucket[b].length}件）</h3>` +
+    byBucket[b].map(l => `<div class="card">
  ${thumb(l.image)}
  <div class="body">
   <div class="name"><a href="${l.url}" target="_blank">${l.name}</a>${tag(l.pct)}</div>
   <div class="price">${yen(l.price)} <span class="small">${l.unit ? '@' + l.unit + '万/㎡' : ''}</span></div>
-  <div class="meta">${l.area ? l.area + '㎡ ' : ''}${l.built || ''} [${l.site}]${l.first_seen ? ' / 初掲載 ' + l.first_seen : ''}${l.cuts ? ` / 値下げ${l.cuts}回（当初 ${yen(l.initial)}）` : ''}</div>
+  <div class="meta">${l.area ? l.area + '㎡ ' : ''}${l.built || ''} [${l.site}] / 比較 ${l.scope}${l.ref ? ' ' + l.ref + '万/㎡' : ''}${l.first_seen ? ' / 初掲載 ' + l.first_seen : ''}${l.cuts ? ` / 値下げ${l.cuts}回（当初 ${yen(l.initial)}）` : ''}</div>
  </div>
-</div>`).join('') || '<p class="small">まだデータがありません。</p>';
+</div>`).join('')).join('') || '<p class="small">まだデータがありません。</p>';
 
 document.getElementById('ended').innerHTML = D.ended.map(e => `<div class="card">
  ${thumb(e.image)}
