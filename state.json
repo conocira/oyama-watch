@@ -538,16 +538,16 @@
   "access": "東武東上線 大山駅 徒歩7分",
   "image": "https://image3.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F139285%2Fsale%2F1629%2F2%2F2%2Fgwrf.jpg&width=208&height=138"
  },
- "https://www.homes.co.jp/mansion/b-1534790000249/": {
+ "https://www.homes.co.jp/mansion/b-35007060000124/": {
   "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-1534790000249/",
-  "name": "ライオンズ板橋氷川町レジデンス",
-  "price": 9980,
-  "area": 80.75,
+  "url": "https://www.homes.co.jp/mansion/b-35007060000124/",
+  "name": "ジオ板橋大山",
+  "price": 8790,
+  "area": 68.61,
   "layout": "3LDK",
-  "built": "",
-  "access": "東武東上線 大山駅 徒歩11分",
-  "image": "https://image1.homes.jp/smallimg/image.php?file=https%3A%2F%2Fcdn-lambda-img.cloud.ielove.jp%2Fimage%2Fsale%2Fc9db8b0c%2F111494_61087_3_132000_132000.jpg%3Ft%3D20260518125255&width=208&height=138"
+  "built": "2025年01月（築2年）",
+  "access": "",
+  "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3500706%2Fsale%2F124%2F11%2F14%2F83dz.jpg"
  },
  "https://www.homes.co.jp/mansion/b-1161840087885/": {
   "site": "HOME'S",
@@ -556,7 +556,7 @@
   "price": 10480,
   "area": 97.72,
   "layout": "3LDK",
-  "built": "",
+  "built": "1989年02月（築38年）",
   "access": "",
   "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F116184%2Fsale%2F87885%2F1%2F1%2Fijru.jpg"
  },
@@ -567,9 +567,31 @@
   "price": 5980,
   "area": 65.71,
   "layout": "3LDK",
-  "built": "",
+  "built": "1995年10月（築31年）",
   "access": "",
   "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F148442%2Fsale%2F1238%2F11%2F5%2F0m9r.jpg"
+ },
+ "https://www.homes.co.jp/mansion/b-1267650039045/#room1": {
+  "site": "HOME'S",
+  "url": "https://www.homes.co.jp/mansion/b-1267650039045/#room1",
+  "name": "シーアイマンション池袋西",
+  "price": 8699,
+  "area": 66.47,
+  "layout": "3LDK",
+  "built": "1994年03月（築33年）",
+  "access": "",
+  "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F126765%2Fsale%2F39045%2F11%2F3%2Fvh78.jpg"
+ },
+ "https://www.homes.co.jp/mansion/b-1267650039045/#room2": {
+  "site": "HOME'S",
+  "url": "https://www.homes.co.jp/mansion/b-1267650039045/#room2",
+  "name": "シーアイマンション池袋西",
+  "price": 8999,
+  "area": 66.47,
+  "layout": "3LDK",
+  "built": "1994年03月（築33年）",
+  "access": "",
+  "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F125923%2Fsale%2F1105%2F11%2F2%2F86u1.jpg"
  },
  "https://www.homes.co.jp/mansion/b-1569230000008/": {
   "site": "HOME'S",
@@ -578,7 +600,7 @@
   "price": 6999,
   "area": 73.1,
   "layout": "3LDK",
-  "built": "",
+  "built": "1988年11月（築38年）",
   "access": "",
   "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F156923%2Fsale%2F8%2F11%2F3%2Fhxku.jpg"
  },
@@ -589,7 +611,7 @@
   "price": 14800,
   "area": 71.68,
   "layout": "3LDK",
-  "built": "",
+  "built": "2025年01月（築2年）",
   "access": "",
   "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F157933%2Fsale%2F116%2F11%2F3%2Fiov9.jpg"
  },
@@ -600,7 +622,7 @@
   "price": 7290,
   "area": 59.52,
   "layout": "3LDK",
-  "built": "",
+  "built": "1995年11月（築31年）",
   "access": "",
   "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3500738%2Fsale%2F164%2F1%2F2%2F3n59.jpg"
  },
@@ -611,7 +633,7 @@
   "price": 8480,
   "area": 70.1,
   "layout": "3LDK",
-  "built": "",
+  "built": "2006年03月（築21年）",
   "access": "",
   "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F147298%2Fsale%2F445%2F11%2F3%2Fw1i1.jpg"
  },
@@ -622,7 +644,7 @@
   "price": 6999,
   "area": 65.75,
   "layout": "3LDK",
-  "built": "",
+  "built": "1999年01月（築28年）",
   "access": "",
   "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F130159%2Fsale%2F20140%2F11%2F6%2F3kj6.jpg"
  },
@@ -633,31 +655,9 @@
   "price": 7880,
   "area": 67.52,
   "layout": "3LDK",
-  "built": "",
+  "built": "2003年02月（築24年）",
   "access": "",
   "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F142177%2Fsale%2F28874%2F11%2F3%2Fy8ww.jpg"
- },
- "https://www.homes.co.jp/mansion/b-1358110012289/#room1": {
-  "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-1358110012289/#room1",
-  "name": "シーアイマンション池袋西",
-  "price": 8999,
-  "area": 66.47,
-  "layout": "3LDK",
-  "built": "",
-  "access": "",
-  "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F125923%2Fsale%2F1105%2F11%2F2%2F86u1.jpg"
- },
- "https://www.homes.co.jp/mansion/b-1358110012289/#room2": {
-  "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-1358110012289/#room2",
-  "name": "シーアイマンション池袋西",
-  "price": 8699,
-  "area": 66.47,
-  "layout": "3LDK",
-  "built": "",
-  "access": "",
-  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F135811%2Fsale%2F12289%2F11%2F3%2Fyje0.jpg"
  },
  "https://www.homes.co.jp/mansion/b-1216390039208/#room1": {
   "site": "HOME'S",
@@ -666,7 +666,7 @@
   "price": 8699,
   "area": 66.47,
   "layout": "3LDK",
-  "built": "",
+  "built": "1994年03月（築33年）",
   "access": "",
   "image": "https://image2.homes.jp/smallimg/image.php?file=https%3A%2F%2Fcdn-lambda-img.cloud.ielove.jp%2Fimage%2Fsale%2F79c9b380%2F533_1008782_1_132000_132000.jpg%3Ft%3D20260726180523"
  },
@@ -677,7 +677,7 @@
   "price": 8999,
   "area": 66.47,
   "layout": "3LDK",
-  "built": "",
+  "built": "1994年03月（築33年）",
   "access": "",
   "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F121639%2Fsale%2F39208%2F11%2F1%2Fp11j.jpg"
  },
@@ -688,9 +688,42 @@
   "price": 6999,
   "area": 73.1,
   "layout": "3LDK",
-  "built": "",
+  "built": "1988年10月（築38年）",
   "access": "",
   "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F142177%2Fsale%2F28785%2F11%2F3%2F6l9p.jpg"
+ },
+ "https://www.homes.co.jp/mansion/b-1161840087308/#room1": {
+  "site": "HOME'S",
+  "url": "https://www.homes.co.jp/mansion/b-1161840087308/#room1",
+  "name": "renovation〜カテリーナ池袋西プラザタワー",
+  "price": 9699,
+  "area": 75.96,
+  "layout": "3LDK",
+  "built": "2001年12月（築25年）",
+  "access": "",
+  "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F158115%2Fsale%2F11%2F1%2F1%2Fruft.jpg"
+ },
+ "https://www.homes.co.jp/mansion/b-1161840087308/#room2": {
+  "site": "HOME'S",
+  "url": "https://www.homes.co.jp/mansion/b-1161840087308/#room2",
+  "name": "renovation〜カテリーナ池袋西プラザタワー",
+  "price": 8780,
+  "area": 75.96,
+  "layout": "3LDK",
+  "built": "2001年12月（築25年）",
+  "access": "",
+  "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F104111%2Fsale%2F70216%2F11%2F1%2Fdzvg.jpg"
+ },
+ "https://www.homes.co.jp/mansion/b-1161840087308/#room3": {
+  "site": "HOME'S",
+  "url": "https://www.homes.co.jp/mansion/b-1161840087308/#room3",
+  "name": "renovation〜カテリーナ池袋西プラザタワー",
+  "price": 9699,
+  "area": 75.96,
+  "layout": "3LDK",
+  "built": "2001年12月（築25年）",
+  "access": "",
+  "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F116184%2Fsale%2F87308%2F11%2F1%2F2nqe.jpg"
  },
  "https://www.homes.co.jp/mansion/b-1552210004602/": {
   "site": "HOME'S",
@@ -699,7 +732,7 @@
   "price": 4599,
   "area": 64.92,
   "layout": "3LDK",
-  "built": "",
+  "built": "1979年09月（築48年）",
   "access": "",
   "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F155221%2Fsale%2F4602%2F11%2F7%2Fr6yd.jpg"
  },
@@ -710,7 +743,7 @@
   "price": 3298,
   "area": 53.39,
   "layout": "3LDK",
-  "built": "",
+  "built": "1980年09月（築47年）",
   "access": "",
   "image": "https://image3.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F151889%2Fsale%2F652%2F11%2F3%2Fow8u.jpg"
  },
@@ -721,7 +754,7 @@
   "price": 9699,
   "area": 75.96,
   "layout": "3LDK",
-  "built": "",
+  "built": "2001年12月（築25年）",
   "access": "",
   "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F121639%2Fsale%2F38926%2F11%2F1%2F3yms.jpg"
  },
@@ -732,42 +765,9 @@
   "price": 8280,
   "area": 63.27,
   "layout": "3LDK",
-  "built": "",
+  "built": "2012年02月（築15年）",
   "access": "",
   "image": "https://image3.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F157933%2Fsale%2F32%2F1%2F1%2Fyqvx.jpg"
- },
- "https://www.homes.co.jp/mansion/b-1358110012206/#room1": {
-  "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-1358110012206/#room1",
-  "name": "カテリーナ池袋西プラザタワー",
-  "price": 9699,
-  "area": 75.96,
-  "layout": "3LDK",
-  "built": "",
-  "access": "",
-  "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F158115%2Fsale%2F11%2F1%2F1%2Fruft.jpg"
- },
- "https://www.homes.co.jp/mansion/b-1358110012206/#room2": {
-  "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-1358110012206/#room2",
-  "name": "カテリーナ池袋西プラザタワー",
-  "price": 8780,
-  "area": 75.96,
-  "layout": "3LDK",
-  "built": "",
-  "access": "",
-  "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F104111%2Fsale%2F70216%2F11%2F1%2Fdzvg.jpg"
- },
- "https://www.homes.co.jp/mansion/b-1358110012206/#room3": {
-  "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-1358110012206/#room3",
-  "name": "カテリーナ池袋西プラザタワー",
-  "price": 9699,
-  "area": 75.96,
-  "layout": "3LDK",
-  "built": "",
-  "access": "",
-  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F135811%2Fsale%2F12206%2F11%2F3%2F4y5l.jpg"
  },
  "https://www.homes.co.jp/mansion/b-1472980000434/": {
   "site": "HOME'S",
@@ -776,7 +776,7 @@
   "price": 9480,
   "area": 67.1,
   "layout": "3LDK",
-  "built": "",
+  "built": "2012年10月（築14年）",
   "access": "",
   "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F147298%2Fsale%2F434%2F11%2F1%2Fel51.jpg"
  },
@@ -787,7 +787,7 @@
   "price": 11780,
   "area": 76.41,
   "layout": "3LDK",
-  "built": "",
+  "built": "2023年09月（築4年）",
   "access": "",
   "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F150001%2Fsale%2F1043%2F11%2F9%2F8k4i.jpg"
  },
@@ -798,7 +798,7 @@
   "price": 10800,
   "area": 68.74,
   "layout": "3LDK",
-  "built": "",
+  "built": "2023年09月（築4年）",
   "access": "",
   "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F139285%2Fsale%2F1629%2F11%2F9%2Fqt31.jpg"
  },
@@ -809,7 +809,7 @@
   "price": 7180,
   "area": 72.63,
   "layout": "3LDK",
-  "built": "",
+  "built": "1992年03月（築35年）",
   "access": "",
   "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F138854%2Fsale%2F11165%2F1%2F3%2Felvh.jpg"
  },
@@ -820,7 +820,7 @@
   "price": 6680,
   "area": 64.96,
   "layout": "3LDK",
-  "built": "",
+  "built": "2000年06月（築27年）",
   "access": "",
   "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F110995%2Fsale%2F14386%2F11%2F1%2Fd13z.jpg"
  },
@@ -831,42 +831,31 @@
   "price": 6680,
   "area": 64.96,
   "layout": "3LDK",
-  "built": "",
+  "built": "2000年05月（築27年）",
   "access": "",
   "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F141704%2Fsale%2F6708%2F11%2F1%2Fyrfg.jpg"
  },
- "https://www.homes.co.jp/mansion/b-1114500007273/#room1": {
+ "https://www.homes.co.jp/mansion/b-1534790000249/#room1": {
   "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-1114500007273/#room1",
+  "url": "https://www.homes.co.jp/mansion/b-1534790000249/#room1",
   "name": "ライオンズ板橋氷川町レジデンス",
   "price": 7799,
   "area": 70.75,
   "layout": "3LDK",
-  "built": "",
+  "built": "2007年11月（築19年）",
   "access": "",
   "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F111450%2Fsale%2F7273%2F11%2F3%2Fpbu6.jpg"
  },
- "https://www.homes.co.jp/mansion/b-1114500007273/#room2": {
+ "https://www.homes.co.jp/mansion/b-1534790000249/#room2": {
   "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-1114500007273/#room2",
+  "url": "https://www.homes.co.jp/mansion/b-1534790000249/#room2",
   "name": "ライオンズ板橋氷川町レジデンス",
   "price": 9980,
   "area": 80.75,
   "layout": "3LDK",
-  "built": "",
+  "built": "2007年11月（築19年）",
   "access": "",
   "image": "https://image2.homes.jp/smallimg/image.php?file=https%3A%2F%2Fcdn-lambda-img.cloud.ielove.jp%2Fimage%2Fsale%2F1a67e975%2F111494_61087_1_132000_132000.jpg%3Ft%3D20260607190203"
- },
- "https://www.homes.co.jp/mansion/b-35007060000124/": {
-  "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-35007060000124/",
-  "name": "ジオ板橋大山",
-  "price": 8790,
-  "area": 68.61,
-  "layout": "3LDK",
-  "built": "",
-  "access": "",
-  "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3500706%2Fsale%2F124%2F11%2F14%2F83dz.jpg"
  },
  "https://www.homes.co.jp/mansion/b-1259230000801/": {
   "site": "HOME'S",
@@ -875,7 +864,7 @@
   "price": 3999,
   "area": 63.18,
   "layout": "3LDK",
-  "built": "",
+  "built": "1974年12月（築52年）",
   "access": "",
   "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F125923%2Fsale%2F801%2F11%2F1%2Fone5.jpg"
  },
@@ -886,7 +875,7 @@
   "price": 4480,
   "area": 67.95,
   "layout": "3LDK",
-  "built": "",
+  "built": "1980年01月（築47年）",
   "access": "",
   "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F153300%2Fsale%2F584%2F11%2F3%2Fhmqu.jpg"
  },
