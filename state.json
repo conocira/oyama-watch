@@ -1,4 +1,15 @@
 {
+ "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21696187/": {
+  "site": "SUUMO",
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21696187/",
+  "name": "大山西町（大山駅） 9800万円",
+  "price": 9800,
+  "area": 68.84,
+  "layout": "3LDK",
+  "built": "2005年1月",
+  "access": "東武東上線「大山」徒歩5分",
+  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F187%2F21696187%2F21696187_0001.jpg&w=192&h=144"
+ },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21662560/": {
   "site": "SUUMO",
   "url": "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21662560/",
@@ -406,17 +417,6 @@
   "image": null,
   "access": "東武東上線 「大山」駅 徒歩7分"
  },
- "https://www.athome.co.jp/mansion/1166315807/": {
-  "site": "at home",
-  "url": "https://www.athome.co.jp/mansion/1166315807/",
-  "name": "日神パレステージ大山 3階 ３ＬＤＫ",
-  "price": 6680,
-  "area": 64.96,
-  "layout": "3LDK",
-  "built": "2000年5月（築26年5ヶ月）",
-  "image": null,
-  "access": "東武東上線 「大山」駅 徒歩10分"
- },
  "https://www.athome.co.jp/mansion/1195597121/": {
   "site": "at home",
   "url": "https://www.athome.co.jp/mansion/1195597121/",
@@ -553,7 +553,7 @@
   "site": "at home",
   "url": "https://www.athome.co.jp/mansion/1017836887/",
   "name": "シティタワーズ板橋大山サウスタワー 10階 ３ＬＤＫ",
-  "price": 14800,
+  "price": 14400,
   "area": 71.68,
   "layout": "3LDK",
   "built": "2025年1月（築1年9ヶ月）",
@@ -574,6 +574,17 @@
  "https://www.athome.co.jp/mansion/1165331805/": {
   "site": "at home",
   "url": "https://www.athome.co.jp/mansion/1165331805/",
+  "name": "日神パレステージ大山 3階 ３ＬＤＫ",
+  "price": 6680,
+  "area": 64.96,
+  "layout": "3LDK",
+  "built": "2000年5月（築26年5ヶ月）",
+  "image": null,
+  "access": "東武東上線 「大山」駅 徒歩10分"
+ },
+ "https://www.athome.co.jp/mansion/1166315807/": {
+  "site": "at home",
+  "url": "https://www.athome.co.jp/mansion/1166315807/",
   "name": "日神パレステージ大山 3階 ３ＬＤＫ",
   "price": 6680,
   "area": 64.96,
