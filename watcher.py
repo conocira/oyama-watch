@@ -85,7 +85,7 @@ def first_image(img) -> str | None:
         return None
     for attr in ("data-original", "rel", "src"):
         v = img.get(attr)
-        if v and not v.startswith("data:"):
+        if v and not v.startswith("data:") and "loading" not in v.lower():
             return v
     return None
 

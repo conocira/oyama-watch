@@ -7,7 +7,7 @@ import json
 import os
 import re
 import statistics
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import datetime, timezone, timedelta
 
 JST = timezone(timedelta(hours=9))
@@ -50,6 +50,45 @@ def age_bucket(built: str, buckets):
     return "築年不明"
 
 
+SITE_PRIORITY = {"HOME'S": 0, "at home": 1, "SUUMO": 2}  # 建物名として表示するのに向いている順
+
+
+def cross_site_key(price, area):
+    """価格+専有面積(小数1桁)で同一物件とみなす。watcher.py の新着判定と同じ基準。"""
+    return f"{price}|{area:.1f}" if price and area else None
+
+
+def merge_cross_site(members: list[dict]) -> dict:
+    """
+    価格・面積が一致する複数サイトの掲載を1枚のカードにまとめる。
+    棟名はSUUMOの販売コピーより HOME'S/at home の建物名を優先し、
+    値下げ履歴は最も記録が多いサイトのものを代表として使う。
+    """
+    if len(members) == 1:
+        m = dict(members[0])
+        m["sites"] = [{"site": m["site"], "url": m["url"], "count": 1}]
+        return m
+
+    primary = min(members, key=lambda m: SITE_PRIORITY.get(m["site"], 9))
+    best_hist = max(members, key=lambda m: m.get("cuts", 0))
+
+    site_urls = {}
+    for m in members:
+        site_urls.setdefault(m["site"], m["url"])
+    site_counts = Counter(m["site"] for m in members)
+    sites = [{"site": s, "url": u, "count": site_counts[s]} for s, u in site_urls.items()]
+
+    merged = dict(primary)
+    merged["image"] = primary.get("image") or next((m["image"] for m in members if m.get("image")), None)
+    merged["built"] = primary.get("built") or next((m["built"] for m in members if m.get("built")), "")
+    merged["access"] = primary.get("access") or next((m["access"] for m in members if m.get("access")), "")
+    merged["first_seen"] = min((m["first_seen"] for m in members if m.get("first_seen")), default=primary.get("first_seen", ""))
+    merged["cuts"] = best_hist.get("cuts", 0)
+    merged["initial"] = best_hist.get("initial")
+    merged["sites"] = sites
+    return merged
+
+
 def main():
     state = load("state.json", {})
     hist = load("history.json", {})
@@ -59,52 +98,66 @@ def main():
     cfg = load("config.json", {})
     buckets = cfg.get("age_buckets") or DEFAULT_BUCKETS
 
+    listings_raw = []
+    for url, it in state.items():
+        h = hist.get(url, {})
+        prices = h.get("prices", [])
+        listings_raw.append({
+            **it,
+            "unit": unit(it.get("price"), it.get("area")),
+            "first_seen": h.get("first_seen", ""),
+            "cuts": max(0, len(prices) - 1),
+            "initial": prices[0]["price"] if prices else None,
+        })
+
+    # 価格・面積が一致するものはサイト横断で同一物件とみなし、1枚のカードにまとめる
+    grouped = defaultdict(list)
+    for l in listings_raw:
+        key = cross_site_key(l.get("price"), l.get("area")) or l["url"]
+        grouped[key].append(l)
+    listings = [merge_cross_site(v) for v in grouped.values()]
+
     groups = {}
     units = []
-    for it in state.values():
-        u = unit(it.get("price"), it.get("area"))
-        if u:
-            groups.setdefault(age_bucket(it.get("built", ""), buckets), []).append(u)
-            units.append(u)
+    for l in listings:
+        if l.get("unit"):
+            b = age_bucket(l.get("built", ""), buckets)
+            groups.setdefault(b, []).append(l["unit"])
+            units.append(l["unit"])
     meds = {b: round(statistics.median(v), 1)
             for b, v in groups.items() if len(v) >= MIN_PEERS and b != "築年不明"}
     counts = {b: len(v) for b, v in groups.items()}
     overall = round(statistics.median(units), 1) if len(units) >= MIN_PEERS else None
 
-    listings = []
-    for url, it in state.items():
-        h = hist.get(url, {})
-        u = unit(it.get("price"), it.get("area"))
-        b = age_bucket(it.get("built", ""), buckets)
+    for l in listings:
+        b = age_bucket(l.get("built", ""), buckets)
         ref, scope = meds.get(b), b + "内"
         if ref is None:
             ref, scope = overall, "全体比"
-        prices = h.get("prices", [])
-        listings.append({
-            **it,
-            "unit": u,
-            "bucket": b,
-            "scope": scope,
-            "ref": ref,
-            "pct": round((u - ref) / ref * 100) if (u and ref) else None,
-            "first_seen": h.get("first_seen", ""),
-            "cuts": max(0, len(prices) - 1),
-            "initial": prices[0]["price"] if prices else None,
-        })
+        l["bucket"] = b
+        l["scope"] = scope
+        l["ref"] = ref
+        l["pct"] = round((l["unit"] - ref) / ref * 100) if (l.get("unit") and ref) else None
     listings.sort(key=lambda x: (x["bucket"], x["pct"] if x["pct"] is not None else 999))
 
     # ---- 掲載終了 ----
-    ended = []
+    ended_raw = []
     for url, h in hist.items():
         if h.get("status") != "掲載終了":
             continue
         prices = h.get("prices", [])
-        ended.append({
+        ended_raw.append({
             **h, "url": url,
             "initial": prices[0]["price"] if prices else None,
             "final": prices[-1]["price"] if prices else None,
             "cuts": max(0, len(prices) - 1),
         })
+
+    ended_grouped = defaultdict(list)
+    for e in ended_raw:
+        key = cross_site_key(e.get("final"), e.get("area")) or e["url"]
+        ended_grouped[key].append(e)
+    ended = [merge_cross_site(v) for v in ended_grouped.values()]
     ended.sort(key=lambda x: x.get("ended", ""), reverse=True)
 
     days = [e["days_listed"] for e in ended if e.get("days_listed") is not None]
@@ -148,7 +201,8 @@ def main():
         "buildings": bld,
         "timeline": timeline,
         "stats": {
-            "n_active": len(state),
+            "n_active": len(listings),
+            "n_active_raw": len(state),
             "n_ended": len(ended),
             "avg_days": round(statistics.mean(days)) if days else None,
             "cut_rate": cut_rate,
@@ -190,6 +244,7 @@ h2{font-size:15px;margin:0 0 10px}
 .bucketFilter{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
 .bucketFilter button{padding:6px 11px;border:1px solid var(--line);background:var(--bg);border-radius:99px;font-size:12px;font-family:inherit;color:var(--ink)}
 .bucketFilter button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sitebadge{display:inline-block;font-size:11px;padding:1px 7px;border-radius:99px;border:1px solid var(--line);color:var(--mute);margin-right:4px;text-decoration:none}
 a{color:inherit}
 details{border-top:1px solid var(--line)}details summary{cursor:pointer;padding:9px 0;font-weight:600}
 .hist{font-size:12px;color:var(--mute);margin:0 0 8px 12px}
@@ -245,7 +300,7 @@ const tag = p => p == null ? '<span class="tag n">判定不可</span>'
 
 const S = D.stats;
 document.getElementById('k1').innerHTML = [
-  [S.n_active + '件', '掲載中（3サイト）'],
+  [S.n_active + '件', S.n_active_raw !== S.n_active ? `掲載中（延べ${S.n_active_raw}件）` : '掲載中'],
   [Object.keys(D.meds).length + '帯', '築年帯別に判定中'],
   [S.n_ended + '件', '掲載終了（累計）'],
 ].map(([b, s]) => `<div class="kpi"><b>${b}</b><span>${s}</span></div>`).join('');
@@ -278,6 +333,10 @@ const thumb = src => src
   ? `<img class="thumb" src="${src}" loading="lazy" alt="" onerror="this.remove()">`
   : '';
 
+const siteBadges = l => (l.sites || [{ site: l.site, url: l.url, count: 1 }])
+  .map(s => `<a href="${s.url}" target="_blank" class="sitebadge">${s.site}${s.count > 1 ? '×' + s.count : ''}</a>`)
+  .join(' ');
+
 const byBucket = {};
 D.listings.forEach(l => (byBucket[l.bucket] = byBucket[l.bucket] || []).push(l));
 const bucketsWithData = D.bucket_order.filter(b => byBucket[b]);
@@ -287,7 +346,8 @@ const card = l => `<div class="card">
  <div class="body">
   <div class="name"><a href="${l.url}" target="_blank">${l.name}</a>${tag(l.pct)}</div>
   <div class="price">${yen(l.price)} <span class="small">${l.unit ? '@' + l.unit + '万/㎡' : ''}</span></div>
-  <div class="meta">${l.area ? l.area + '㎡ ' : ''}${l.built || ''} [${l.site}] / 比較 ${l.scope}${l.ref ? ' ' + l.ref + '万/㎡' : ''}${l.first_seen ? ' / 初掲載 ' + l.first_seen : ''}${l.cuts ? ` / 値下げ${l.cuts}回（当初 ${yen(l.initial)}）` : ''}</div>
+  <div class="meta">${l.area ? l.area + '㎡ ' : ''}${l.built || ''} / 比較 ${l.scope}${l.ref ? ' ' + l.ref + '万/㎡' : ''}${l.first_seen ? ' / 初掲載 ' + l.first_seen : ''}${l.cuts ? ` / 値下げ${l.cuts}回（当初 ${yen(l.initial)}）` : ''}</div>
+  <div class="meta">${siteBadges(l)}</div>
  </div>
 </div>`;
 
@@ -314,7 +374,8 @@ document.getElementById('ended').innerHTML = D.ended.map(e => `<div class="card"
  <div class="body">
   <div class="name">${e.name}</div>
   <div class="price">${yen(e.final)}${e.initial && e.initial !== e.final ? ` <span class="small">当初 ${yen(e.initial)}（▼${(100-e.final/e.initial*100).toFixed(1)}%）</span>` : ''}</div>
-  <div class="meta">${e.area ? e.area + '㎡ ' : ''}${e.built || ''} [${e.site}] / ${e.first_seen} 〜 ${e.ended}${e.days_listed != null ? `（${e.days_listed}日）` : ''}${e.cuts ? ` / 値下げ${e.cuts}回` : ''}</div>
+  <div class="meta">${e.area ? e.area + '㎡ ' : ''}${e.built || ''} / ${e.first_seen} 〜 ${e.ended}${e.days_listed != null ? `（${e.days_listed}日）` : ''}${e.cuts ? ` / 値下げ${e.cuts}回` : ''}</div>
+  <div class="meta">${siteBadges(e)}</div>
  </div>
 </div>`).join('') || '<p class="small">掲載終了した物件はまだありません。数週間たつと出てきます。</p>';
 
