@@ -131,13 +131,18 @@ def main():
 
     for l in listings:
         b = age_bucket(l.get("built", ""), buckets)
-        ref, scope = meds.get(b), b + "内"
-        if ref is None:
-            ref, scope = overall, "全体比"
+        ref = meds.get(b)
         l["bucket"] = b
-        l["scope"] = scope
-        l["ref"] = ref
-        l["pct"] = round((l["unit"] - ref) / ref * 100) if (l.get("unit") and ref) else None
+        if ref is None:
+            # 同じ築年帯の比較対象が3件未満。全体比では築年数による当然の価格差を
+            # 「割安/割高」と誤解させてしまうため、判定そのものを行わない。
+            l["scope"] = "判定不可(件数不足)"
+            l["ref"] = None
+            l["pct"] = None
+        else:
+            l["scope"] = b + "内"
+            l["ref"] = ref
+            l["pct"] = round((l["unit"] - ref) / ref * 100) if l.get("unit") else None
     listings.sort(key=lambda x: (x["bucket"], x["pct"] if x["pct"] is not None else 999))
 
     # ---- 掲載終了 ----

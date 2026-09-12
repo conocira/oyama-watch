@@ -415,12 +415,11 @@ def market_label(item: dict, meds: dict, buckets=None) -> str:
     b = age_bucket(item, buckets)
     meds = meds or {}
     ref = meds.get(b)
-    scope = f"{b}内"
-    if not ref:
-        ref = meds.get("_all")
-        scope = "全体比・築年帯の件数不足"
     if not up or not ref:
-        return " ⚪判定不可"
+        # 同じ築年帯の比較対象が3件未満。全体比だと築年数による当然の価格差を
+        # 「割安/割高」と誤解させるため、判定そのものを行わない。
+        return " ⚪判定不可(件数不足)"
+    scope = f"{b}内"
     diff = (up - ref) / ref * 100
     if diff <= -15:
         tag = "🟢割安"
