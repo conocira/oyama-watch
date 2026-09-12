@@ -166,6 +166,12 @@ def parse_homes(html: str, base: str) -> list[dict]:
         building_url = urljoin(base, head_link["href"])
         building_name = name_el.get_text(strip=True)
         building_image = first_image(group.select_one(".bukkenPhoto img"))
+        building_info = {}
+        for tr in group.select(".bukkenSpec table tr"):
+            cells = tr.find_all(["th", "td"])
+            for j in range(0, len(cells) - 1, 2):
+                building_info[cells[j].get_text(strip=True)] = cells[j + 1].get_text(" ", strip=True)
+        building_built = next((v for k, v in building_info.items() if k.startswith("築年月")), "")
         rows = group.select("table.unitSummary > tbody > tr[data-mbtg-alias='cMansion']")
         for i, row in enumerate(rows):
             info = {}
@@ -186,7 +192,7 @@ def parse_homes(html: str, base: str) -> list[dict]:
                     "price": parse_price(info.get("価格", "")),
                     "area": parse_area(info.get("専有面積", "")),
                     "layout": layout,
-                    "built": "",
+                    "built": building_built,
                     "access": "",
                     "image": image,
                 }

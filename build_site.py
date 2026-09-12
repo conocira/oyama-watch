@@ -187,6 +187,9 @@ h2{font-size:15px;margin:0 0 10px}
 .tag{display:inline-block;font-size:11px;padding:2px 7px;border-radius:99px;color:#fff;margin-left:6px;white-space:nowrap}
 .g{background:var(--g)}.o{background:var(--o)}.r{background:var(--r)}.n{background:#8a8a85}
 .small{font-size:12px;color:var(--mute)}
+.bucketFilter{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.bucketFilter button{padding:6px 11px;border:1px solid var(--line);background:var(--bg);border-radius:99px;font-size:12px;font-family:inherit;color:var(--ink)}
+.bucketFilter button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 a{color:inherit}
 details{border-top:1px solid var(--line)}details summary{cursor:pointer;padding:9px 0;font-weight:600}
 .hist{font-size:12px;color:var(--mute);margin:0 0 8px 12px}
@@ -205,6 +208,7 @@ details{border-top:1px solid var(--line)}details summary{cursor:pointer;padding:
  <h2 style="margin-top:14px">掲載中の物件（割安順）</h2>
  <p class="small">判定は<b>同じ築年帯の物件どうし</b>の㎡単価比較。築浅タワーと築古が混ざらないようにしています。同じ帯が3件未満のときは全体比に切り替わり、その旨を表示します。</p>
  <div id="meds" class="small" style="margin-bottom:8px"></div>
+ <div class="bucketFilter" id="bucketFilter"></div>
  <div id="listings"></div>
 </section>
 
@@ -276,17 +280,34 @@ const thumb = src => src
 
 const byBucket = {};
 D.listings.forEach(l => (byBucket[l.bucket] = byBucket[l.bucket] || []).push(l));
-document.getElementById('listings').innerHTML = D.bucket_order
-  .filter(b => byBucket[b])
-  .map(b => `<h3 style="font-size:13px;color:var(--mute);margin:16px 0 0">${b}（${byBucket[b].length}件）</h3>` +
-    byBucket[b].map(l => `<div class="card">
+const bucketsWithData = D.bucket_order.filter(b => byBucket[b]);
+
+const card = l => `<div class="card">
  ${thumb(l.image)}
  <div class="body">
   <div class="name"><a href="${l.url}" target="_blank">${l.name}</a>${tag(l.pct)}</div>
   <div class="price">${yen(l.price)} <span class="small">${l.unit ? '@' + l.unit + '万/㎡' : ''}</span></div>
   <div class="meta">${l.area ? l.area + '㎡ ' : ''}${l.built || ''} [${l.site}] / 比較 ${l.scope}${l.ref ? ' ' + l.ref + '万/㎡' : ''}${l.first_seen ? ' / 初掲載 ' + l.first_seen : ''}${l.cuts ? ` / 値下げ${l.cuts}回（当初 ${yen(l.initial)}）` : ''}</div>
  </div>
-</div>`).join('')).join('') || '<p class="small">まだデータがありません。</p>';
+</div>`;
+
+function renderListings(active) {
+  const buckets = active === 'ALL' ? bucketsWithData : bucketsWithData.filter(b => b === active);
+  document.getElementById('listings').innerHTML = buckets
+    .map(b => `<h3 style="font-size:13px;color:var(--mute);margin:16px 0 0">${b}（${byBucket[b].length}件）</h3>` +
+      byBucket[b].map(card).join('')).join('') || '<p class="small">まだデータがありません。</p>';
+}
+
+let activeBucket = 'ALL';
+document.getElementById('bucketFilter').innerHTML = ['ALL', ...bucketsWithData].map(b =>
+  `<button data-b="${b}" class="${b === activeBucket ? 'on' : ''}">${b === 'ALL' ? 'すべて' : b + `（${byBucket[b].length}）`}</button>`
+).join('');
+document.querySelectorAll('#bucketFilter button').forEach(btn => btn.onclick = () => {
+  activeBucket = btn.dataset.b;
+  document.querySelectorAll('#bucketFilter button').forEach(x => x.classList.toggle('on', x === btn));
+  renderListings(activeBucket);
+});
+renderListings(activeBucket);
 
 document.getElementById('ended').innerHTML = D.ended.map(e => `<div class="card">
  ${thumb(e.image)}
