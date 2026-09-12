@@ -46,9 +46,11 @@
     "price": 6999
    }
   ],
-  "status": "掲載中",
+  "status": "掲載終了",
   "last_seen": "2026-09-12",
-  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F663%2F21645663%2F21645663_0016.jpg&w=192&h=144"
+  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F663%2F21645663%2F21645663_0016.jpg&w=192&h=144",
+  "ended": "2026-09-12",
+  "days_listed": 2
  },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21655908/": {
   "name": "～当日ご案内可～◇頭金0円からのご提案◇７階南西角部屋◇ペット可、リノベ済",
@@ -135,9 +137,11 @@
     "price": 9699
    }
   ],
-  "status": "掲載中",
+  "status": "掲載終了",
   "last_seen": "2026-09-12",
-  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F031%2F21636031%2F21636031_0003.jpg&w=192&h=144"
+  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F031%2F21636031%2F21636031_0003.jpg&w=192&h=144",
+  "ended": "2026-09-12",
+  "days_listed": 2
  },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21662560/": {
   "name": "広大な敷地内に緑豊かな「杜」が安らぎの空間を演出する３ＬＤＫレジデンス",
@@ -1083,9 +1087,11 @@
     "price": 8999
    }
   ],
-  "status": "掲載中",
+  "status": "掲載終了",
   "last_seen": "2026-09-12",
-  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F121639%2Fsale%2F39208%2F11%2F1%2Fp11j.jpg"
+  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F121639%2Fsale%2F39208%2F11%2F1%2Fp11j.jpg",
+  "ended": "2026-09-12",
+  "days_listed": 2
  },
  "https://www.homes.co.jp/mansion/b-1421770028785/": {
   "name": "ワコーレ要町",
@@ -1185,11 +1191,9 @@
     "price": 9699
    }
   ],
-  "status": "掲載終了",
-  "last_seen": "2026-09-11",
-  "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F158115%2Fsale%2F11%2F1%2F1%2Fruft.jpg",
-  "ended": "2026-09-12",
-  "days_listed": 2
+  "status": "掲載中",
+  "last_seen": "2026-09-12",
+  "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F158115%2Fsale%2F11%2F1%2F1%2Fruft.jpg"
  },
  "https://www.homes.co.jp/mansion/b-1358110012206/#room2": {
   "name": "カテリーナ池袋西プラザタワー",
@@ -1204,11 +1208,9 @@
     "price": 8780
    }
   ],
-  "status": "掲載終了",
-  "last_seen": "2026-09-11",
-  "image": "https://image3.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F104111%2Fsale%2F70216%2F11%2F1%2Fkrsw.jpg",
-  "ended": "2026-09-12",
-  "days_listed": 2
+  "status": "掲載中",
+  "last_seen": "2026-09-12",
+  "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F104111%2Fsale%2F70216%2F11%2F1%2Fdzvg.jpg"
  },
  "https://www.homes.co.jp/mansion/b-1358110012206/#room3": {
   "name": "カテリーナ池袋西プラザタワー",
@@ -1223,11 +1225,9 @@
     "price": 9699
    }
   ],
-  "status": "掲載終了",
-  "last_seen": "2026-09-11",
-  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F135811%2Fsale%2F12206%2F11%2F3%2F4y5l.jpg",
-  "ended": "2026-09-12",
-  "days_listed": 2
+  "status": "掲載中",
+  "last_seen": "2026-09-12",
+  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F135811%2Fsale%2F12206%2F11%2F3%2F4y5l.jpg"
  },
  "https://www.homes.co.jp/mansion/b-1472980000434/": {
   "name": "Brillia板橋大山",
@@ -1295,7 +1295,7 @@
   ],
   "status": "掲載中",
   "last_seen": "2026-09-12",
-  "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F138854%2Fsale%2F11165%2F1%2F3%2F4e50.jpg"
+  "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F138854%2Fsale%2F11165%2F1%2F3%2Felvh.jpg"
  },
  "https://www.homes.co.jp/mansion/b-1109950014386/": {
   "name": "日神パレステージ大山",
@@ -1344,9 +1344,11 @@
     "price": 7799
    }
   ],
-  "status": "掲載中",
+  "status": "掲載終了",
   "last_seen": "2026-09-12",
-  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F142177%2Fsale%2F28089%2F1%2F2%2F7jj1.jpg"
+  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F142177%2Fsale%2F28089%2F1%2F2%2F7jj1.jpg",
+  "ended": "2026-09-12",
+  "days_listed": 2
  },
  "https://www.homes.co.jp/mansion/b-1534790000249/#room2": {
   "name": "ライオンズ板橋氷川町レジデンス",
@@ -1361,9 +1363,11 @@
     "price": 9980
    }
   ],
-  "status": "掲載中",
+  "status": "掲載終了",
   "last_seen": "2026-09-12",
-  "image": "https://image2.homes.jp/smallimg/image.php?file=https%3A%2F%2Fcdn-lambda-img.cloud.ielove.jp%2Fimage%2Fsale%2F1a67e975%2F111494_61087_1_132000_132000.jpg%3Ft%3D20260607190203"
+  "image": "https://image2.homes.jp/smallimg/image.php?file=https%3A%2F%2Fcdn-lambda-img.cloud.ielove.jp%2Fimage%2Fsale%2F1a67e975%2F111494_61087_1_132000_132000.jpg%3Ft%3D20260607190203",
+  "ended": "2026-09-12",
+  "days_listed": 2
  },
  "https://www.homes.co.jp/mansion/b-1259230000801/": {
   "name": "池袋第2ヒルハイム",
@@ -1728,6 +1732,10 @@
    {
     "date": "2026-09-10",
     "price": 8999
+   },
+   {
+    "date": "2026-09-12",
+    "price": 8699
    }
   ],
   "status": "掲載中",
@@ -2227,11 +2235,9 @@
     "price": 9980
    }
   ],
-  "status": "掲載終了",
+  "status": "掲載中",
   "image": "https://image1.homes.jp/smallimg/image.php?file=https%3A%2F%2Fcdn-lambda-img.cloud.ielove.jp%2Fimage%2Fsale%2Fc9db8b0c%2F111494_61087_3_132000_132000.jpg%3Ft%3D20260518125255&width=208&height=138",
-  "last_seen": "2026-09-11",
-  "ended": "2026-09-12",
-  "days_listed": 1
+  "last_seen": "2026-09-12"
  },
  "https://www.homes.co.jp/mansion/b-1358110012289/#room1": {
   "name": "シーアイマンション池袋西",
@@ -2248,10 +2254,14 @@
    {
     "date": "2026-09-12",
     "price": 8699
+   },
+   {
+    "date": "2026-09-12",
+    "price": 8999
    }
   ],
   "status": "掲載中",
-  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F135811%2Fsale%2F12289%2F11%2F3%2Fyje0.jpg",
+  "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F125923%2Fsale%2F1105%2F11%2F2%2F86u1.jpg",
   "last_seen": "2026-09-12"
  },
  "https://www.homes.co.jp/mansion/b-1358110012289/#room2": {
@@ -2269,10 +2279,14 @@
    {
     "date": "2026-09-12",
     "price": 8999
+   },
+   {
+    "date": "2026-09-12",
+    "price": 8699
    }
   ],
   "status": "掲載中",
-  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F116184%2Fsale%2F87333%2F11%2F1%2Ft4n4.jpg",
+  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F135811%2Fsale%2F12289%2F11%2F3%2Fyje0.jpg",
   "last_seen": "2026-09-12"
  },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21674977/": {
@@ -2339,9 +2353,11 @@
     "price": 10480
    }
   ],
-  "status": "掲載中",
+  "status": "掲載終了",
   "image": "/search/assets/img/default/common/thumb/no-image_208x138.png?v=fc9960ce6540fa484035d77ec44b5a8f",
-  "last_seen": "2026-09-12"
+  "last_seen": "2026-09-12",
+  "ended": "2026-09-12",
+  "days_listed": 0
  },
  "https://www.homes.co.jp/mansion/b-1484420001238/": {
   "name": "日神パレステージ板橋本町第5",
@@ -2373,9 +2389,11 @@
     "price": 9699
    }
   ],
-  "status": "掲載中",
+  "status": "掲載終了",
   "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F158115%2Fsale%2F11%2F1%2F1%2Fruft.jpg",
-  "last_seen": "2026-09-12"
+  "last_seen": "2026-09-12",
+  "ended": "2026-09-12",
+  "days_listed": 0
  },
  "https://www.homes.co.jp/mansion/b-1161840087308/#room2": {
   "name": "renovation〜カテリーナ池袋西プラザタワー",
@@ -2390,9 +2408,11 @@
     "price": 8780
    }
   ],
-  "status": "掲載中",
+  "status": "掲載終了",
   "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F104111%2Fsale%2F70216%2F11%2F1%2Fxijp.jpg",
-  "last_seen": "2026-09-12"
+  "last_seen": "2026-09-12",
+  "ended": "2026-09-12",
+  "days_listed": 0
  },
  "https://www.homes.co.jp/mansion/b-1161840087308/#room3": {
   "name": "renovation〜カテリーナ池袋西プラザタワー",
@@ -2407,9 +2427,11 @@
     "price": 9699
    }
   ],
-  "status": "掲載中",
+  "status": "掲載終了",
   "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F116184%2Fsale%2F87308%2F11%2F1%2F2nqe.jpg",
-  "last_seen": "2026-09-12"
+  "last_seen": "2026-09-12",
+  "ended": "2026-09-12",
+  "days_listed": 0
  },
  "https://www.athome.co.jp/mansion/1021167891/": {
   "name": "大山パークハウススタイリッシュタワー 16階 ３ＬＤＫ",
@@ -2429,6 +2451,125 @@
   "last_seen": "2026-09-12"
  },
  "https://www.athome.co.jp/mansion/1107988314/": {
+  "name": "ゲオ・タワー池袋 7階 ３ＬＤＫ",
+  "building": "ゲオ・タワー池袋",
+  "site": "at home",
+  "area": 97.72,
+  "built": "1989年2月（築37年8ヶ月）",
+  "first_seen": "2026-09-12",
+  "prices": [
+   {
+    "date": "2026-09-12",
+    "price": 10480
+   }
+  ],
+  "status": "掲載中",
+  "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
+  "last_seen": "2026-09-12"
+ },
+ "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21691508/": {
+  "name": "３ＬＤＫ・７３．１０㎡南西角リノベーションでお部屋ピカピカ。",
+  "building": "3LDK・73.10m2南西角リノベーションでお",
+  "site": "SUUMO",
+  "area": 73.1,
+  "built": "1988年11月",
+  "first_seen": "2026-09-12",
+  "prices": [
+   {
+    "date": "2026-09-12",
+    "price": 6999
+   }
+  ],
+  "status": "掲載中",
+  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F508%2F21691508%2F21691508_0026.jpg&w=192&h=144",
+  "last_seen": "2026-09-12"
+ },
+ "https://www.homes.co.jp/mansion/b-1161840087885/": {
+  "name": "ゲオ・タワー池袋",
+  "building": "ゲオ・タワー池袋",
+  "site": "HOME'S",
+  "area": 97.72,
+  "built": "",
+  "first_seen": "2026-09-12",
+  "prices": [
+   {
+    "date": "2026-09-12",
+    "price": 10480
+   }
+  ],
+  "status": "掲載中",
+  "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F116184%2Fsale%2F87885%2F1%2F1%2Fijru.jpg",
+  "last_seen": "2026-09-12"
+ },
+ "https://www.homes.co.jp/mansion/b-1216390039208/#room1": {
+  "name": "東京メトロ有楽町線 要町駅 徒歩7分",
+  "building": "東京メトロ有楽町線要町駅徒歩7分",
+  "site": "HOME'S",
+  "area": 66.47,
+  "built": "",
+  "first_seen": "2026-09-12",
+  "prices": [
+   {
+    "date": "2026-09-12",
+    "price": 8699
+   }
+  ],
+  "status": "掲載中",
+  "image": "https://image2.homes.jp/smallimg/image.php?file=https%3A%2F%2Fcdn-lambda-img.cloud.ielove.jp%2Fimage%2Fsale%2F79c9b380%2F533_1008782_1_132000_132000.jpg%3Ft%3D20260726180523",
+  "last_seen": "2026-09-12"
+ },
+ "https://www.homes.co.jp/mansion/b-1216390039208/#room2": {
+  "name": "東京メトロ有楽町線 要町駅 徒歩7分",
+  "building": "東京メトロ有楽町線要町駅徒歩7分",
+  "site": "HOME'S",
+  "area": 66.47,
+  "built": "",
+  "first_seen": "2026-09-12",
+  "prices": [
+   {
+    "date": "2026-09-12",
+    "price": 8999
+   }
+  ],
+  "status": "掲載中",
+  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F121639%2Fsale%2F39208%2F11%2F1%2Fp11j.jpg",
+  "last_seen": "2026-09-12"
+ },
+ "https://www.homes.co.jp/mansion/b-1114500007273/#room1": {
+  "name": "ライオンズ板橋氷川町レジデンス",
+  "building": "ライオンズ板橋氷川町レジデンス",
+  "site": "HOME'S",
+  "area": 70.75,
+  "built": "",
+  "first_seen": "2026-09-12",
+  "prices": [
+   {
+    "date": "2026-09-12",
+    "price": 7799
+   }
+  ],
+  "status": "掲載中",
+  "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F111450%2Fsale%2F7273%2F11%2F3%2Fpbu6.jpg",
+  "last_seen": "2026-09-12"
+ },
+ "https://www.homes.co.jp/mansion/b-1114500007273/#room2": {
+  "name": "ライオンズ板橋氷川町レジデンス",
+  "building": "ライオンズ板橋氷川町レジデンス",
+  "site": "HOME'S",
+  "area": 80.75,
+  "built": "",
+  "first_seen": "2026-09-12",
+  "prices": [
+   {
+    "date": "2026-09-12",
+    "price": 9980
+   }
+  ],
+  "status": "掲載中",
+  "image": "https://image2.homes.jp/smallimg/image.php?file=https%3A%2F%2Fcdn-lambda-img.cloud.ielove.jp%2Fimage%2Fsale%2F1a67e975%2F111494_61087_1_132000_132000.jpg%3Ft%3D20260607190203",
+  "last_seen": "2026-09-12"
+ },
+ "https://www.athome.co.jp/mansion/1155179127/": {
   "name": "ゲオ・タワー池袋 7階 ３ＬＤＫ",
   "building": "ゲオ・タワー池袋",
   "site": "at home",
