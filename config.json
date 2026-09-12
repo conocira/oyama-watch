@@ -3,7 +3,7 @@
   "sources": {
     "suumo": ["https://suumo.jp/jj/bukken/ichiran/JJ012FC001/?ar=030&bs=011&cn=9999999&cnb=0&ekTemp=038506420&ekTjCd=&ekTjNm=&et=9999999&fw2=&kb=1&kt=9999999&mb=0&md=3&mt=9999999&ra=030013&rn=0385&rnTemp=0385&rnek=038506420&tj=0&pc=100&po=1&pj=2"],
     "homes": ["https://www.homes.co.jp/mansion/chuko/tokyo/oyama_04748-st/list/?cond%5Bmadori%5D%5B35%5D=35&cond%5Bsortby%5D=newdate"],
-    "athome": ["https://www.athome.co.jp/mansion/chuko/tokyo/list/?pref=13&stations=tobutojo_2270-2270040&basic=kp120,kp001,km015,kt424,kt101,ke001,kn001,kj001&kod=&q=1&sort=33&limit=50"]
+    "athome": ["https://www.athome.co.jp/mansion/chuko/tokyo/list/?pref=13&stations=tobutojo_2270-2270040&basic=kp120,kp001,km015,kt424,kt101,ke001,kn001,kj001&kod=&q=1&sort=33&limit=100"]
   },
   "age_buckets": [
     ["築20年未満", 0, 20],
