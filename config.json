@@ -6,7 +6,8 @@
     "athome": ["https://www.athome.co.jp/mansion/chuko/tokyo/list/?pref=13&stations=tobutojo_2270-2270040&basic=kp120,kp001,km015,kt424,kt101,ke004,kn001,kj001&kod=&q=1&sort=33&limit=100"]
   },
   "age_buckets": [
-    ["築20年未満", 0, 20],
+    ["築10年未満", 0, 10],
+    ["築10〜20年", 10, 20],
     ["築20〜35年", 20, 35],
     ["築35年以上", 35, 200]
   ],
