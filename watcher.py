@@ -172,6 +172,9 @@ def parse_homes(html: str, base: str) -> list[dict]:
             for j in range(0, len(cells) - 1, 2):
                 building_info[cells[j].get_text(strip=True)] = cells[j + 1].get_text(" ", strip=True)
         building_built = next((v for k, v in building_info.items() if k.startswith("築年月")), "")
+        building_traffic = next((v for k, v in building_info.items() if k.startswith("交通")), "")
+        m = re.search(r"^(.*?徒歩\d+分)", building_traffic)
+        building_access = m.group(1) if m else building_traffic
         rows = group.select("table.unitSummary > tbody > tr[data-mbtg-alias='cMansion']")
         for i, row in enumerate(rows):
             info = {}
@@ -193,7 +196,7 @@ def parse_homes(html: str, base: str) -> list[dict]:
                     "area": parse_area(info.get("専有面積", "")),
                     "layout": layout,
                     "built": building_built,
-                    "access": "",
+                    "access": building_access,
                     "image": image,
                 }
             )
@@ -259,10 +262,15 @@ def norm_name(name: str) -> str:
     return n[:40] or "不明"
 
 
-def update_history(current: dict, prev: dict) -> tuple[dict, list]:
+MISS_LIMIT = 3  # 何回連続で見つからなかったら「掲載終了」にするか
+
+
+def update_history(current: dict, prev: dict) -> tuple[dict, list, dict]:
     """
     掲載中の物件の価格推移を記録し、消えた物件を「掲載終了」にする。
-    戻り値: (履歴全体, 今回消えた物件のリスト)
+    検索結果の並び順が変わって一時的に取得できなかっただけの場合があるため、
+    MISS_LIMIT 回連続で見つからないと確定するまでは「掲載中」のまま様子見する。
+    戻り値: (履歴全体, 今回確定した「掲載終了」のリスト, 様子見中の物件 {url: 直近のデータ})
     """
     today = datetime.now(JST).strftime("%Y-%m-%d")
     hist = {}
@@ -288,15 +296,22 @@ def update_history(current: dict, prev: dict) -> tuple[dict, list]:
             h["image"] = it["image"]
         h["last_seen"] = today
         h["status"] = "掲載中"
+        h["miss"] = 0
         h.pop("ended", None)
         h.pop("days_listed", None)
         if it.get("price") and (not h["prices"] or h["prices"][-1]["price"] != it["price"]):
             h["prices"].append({"date": today, "price": it["price"]})
 
     ended = []
+    carry = {}
     for url in prev:
+        if url in current:
+            continue
         h = hist.get(url)
-        if url not in current and h and h.get("status") == "掲載中":
+        if not h or h.get("status") != "掲載中":
+            continue
+        h["miss"] = h.get("miss", 0) + 1
+        if h["miss"] >= MISS_LIMIT:
             h["status"] = "掲載終了"
             h["ended"] = today
             try:
@@ -305,10 +320,12 @@ def update_history(current: dict, prev: dict) -> tuple[dict, list]:
             except Exception:
                 h["days_listed"] = None
             ended.append({**h, "url": url})
+        else:
+            carry[url] = prev[url]  # まだ様子見。前回のデータのまま「掲載中」として引き継ぐ
 
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(hist, f, ensure_ascii=False, indent=1)
-    return hist, ended
+    return hist, ended, carry
 
 
 def fmt_ended(h: dict) -> str:
@@ -478,7 +495,8 @@ def main():
                 current[it["url"]] = it
             time.sleep(3)  # サイトへの負荷を抑える
 
-    hist, ended = update_history(current, prev)
+    hist, ended, carry = update_history(current, prev)
+    current.update(carry)  # 様子見中(まだ確定していない)物件を「掲載中」として引き継ぐ
 
     # 差分
     new_items, price_drops = [], []
