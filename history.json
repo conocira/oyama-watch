@@ -169,7 +169,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F560%2F21662560%2F21662560_0001.jpg&w=192&h=144",
   "miss": 0
  },
@@ -267,7 +267,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F223%2F20001223%2F20001223_0011.jpg&w=192&h=144",
   "miss": 0
  },
@@ -282,10 +282,14 @@
    {
     "date": "2026-09-10",
     "price": 6999
+   },
+   {
+    "date": "2026-09-22",
+    "price": 6899
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F299%2F21354299%2F21354299_0066.jpg&w=192&h=144",
   "miss": 0
  },
@@ -303,7 +307,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F346%2F21397346%2F21397346_0002.jpg&w=192&h=144",
   "miss": 0
  },
@@ -321,7 +325,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F905%2F20746905%2F20746905_0045.jpg&w=192&h=144",
   "miss": 0
  },
@@ -339,7 +343,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F038%2F21200038%2F21200038_0038.jpg&w=192&h=144",
   "miss": 0
  },
@@ -377,7 +381,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F121%2F21178121%2F21178121_0001.jpg&w=192&h=144",
   "miss": 0
  },
@@ -395,7 +399,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F200%2F21369200%2F21369200_0020.jpg&w=192&h=144",
   "miss": 0
  },
@@ -476,7 +480,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F959%2F20156959%2F20156959_0006.jpg&w=192&h=144",
   "miss": 0
  },
@@ -494,7 +498,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F847%2F20310847%2F20310847_0021.jpg&w=192&h=144",
   "miss": 0
  },
@@ -512,7 +516,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F157%2F21477157%2F21477157_0001.jpg&w=192&h=144",
   "miss": 0
  },
@@ -530,7 +534,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F185%2F20978185%2F20978185_0001.jpg&w=192&h=144",
   "miss": 0
  },
@@ -590,7 +594,7 @@
   "status": "掲載中",
   "last_seen": "2026-09-21",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F524%2F21510524%2F21510524_0044.jpg&w=192&h=144",
-  "miss": 0
+  "miss": 1
  },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_20934919/": {
   "name": "【最上階角部屋×３面ルーフバルコニー付き】２路線利用しつつ圧倒的な開放感！",
@@ -603,10 +607,14 @@
    {
     "date": "2026-09-10",
     "price": 6999
+   },
+   {
+    "date": "2026-09-22",
+    "price": 6899
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F919%2F20934919%2F20934919_0026.jpg&w=192&h=144",
   "miss": 0
  },
@@ -664,7 +672,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F688%2F21418688%2F21418688_0001.jpg&w=192&h=144",
   "miss": 0
  },
@@ -682,7 +690,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F665%2F78211665%2F78211665_0043.jpg&w=192&h=144",
   "miss": 0
  },
@@ -720,7 +728,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F887%2F21088887%2F21088887_0035.jpg&w=192&h=144",
   "miss": 0
  },
@@ -909,7 +917,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F632%2F21266632%2F21266632_0001.jpg&w=192&h=144",
   "miss": 0
  },
@@ -975,7 +983,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F168%2F21425168%2F21425168_0001.jpg&w=192&h=144",
   "miss": 0
  },
@@ -993,7 +1001,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://image3.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F139285%2Fsale%2F1629%2F2%2F2%2Fgwrf.jpg&width=208&height=138",
   "miss": 0
  },
@@ -1011,7 +1019,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3500706%2Fsale%2F124%2F11%2F14%2F83dz.jpg",
   "miss": 0
  },
@@ -1120,7 +1128,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F157933%2Fsale%2F116%2F11%2F3%2Fiov9.jpg",
   "miss": 0
  },
@@ -1138,7 +1146,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3500738%2Fsale%2F164%2F1%2F2%2F3n59.jpg",
   "miss": 0
  },
@@ -1156,7 +1164,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F147298%2Fsale%2F445%2F11%2F3%2Fw1i1.jpg",
   "miss": 0
  },
@@ -1313,7 +1321,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://image3.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F157933%2Fsale%2F32%2F1%2F1%2Fyqvx.jpg",
   "miss": 0
  },
@@ -1391,7 +1399,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F147298%2Fsale%2F434%2F11%2F1%2Fel51.jpg",
   "miss": 0
  },
@@ -1413,7 +1421,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3500612%2Fsale%2F135%2F1%2F1%2Fpgid.jpg",
   "miss": 0
  },
@@ -1435,8 +1443,8 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
-  "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F150001%2Fsale%2F1043%2F11%2F9%2F8k4i.jpg",
+  "last_seen": "2026-09-22",
+  "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F150001%2Fsale%2F1043%2F11%2F9%2Ffmgo.jpg",
   "miss": 0
  },
  "https://www.homes.co.jp/mansion/b-1388540011165/": {
@@ -1473,7 +1481,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F110995%2Fsale%2F14386%2F11%2F1%2Fd13z.jpg",
   "miss": 0
  },
@@ -1491,7 +1499,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F141704%2Fsale%2F6708%2F11%2F1%2Fyrfg.jpg",
   "miss": 0
  },
@@ -1569,7 +1577,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F153300%2Fsale%2F584%2F11%2F3%2Fhmqu.jpg",
   "miss": 0
  },
@@ -1609,7 +1617,7 @@
   "status": "掲載中",
   "last_seen": "2026-09-20",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
-  "miss": 1
+  "miss": 2
  },
  "https://www.athome.co.jp/mansion/1177015919/": {
   "name": "カテリーナ池袋西プラザタワー 4階 ３ＬＤＫ",
@@ -1645,7 +1653,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
   "miss": 0
  },
@@ -1797,7 +1805,7 @@
   "status": "掲載中",
   "last_seen": "2026-09-21",
   "image": "https://www.athome.co.jp/image_files/path/8JUioXeMrLLal4_eAg2S6Q==",
-  "miss": 0
+  "miss": 1
  },
  "https://www.athome.co.jp/mansion/1134329127/": {
   "name": "ライオンズ板橋氷川町レジデンス 2階 ３ＬＤＫ",
@@ -1833,7 +1841,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
   "miss": 0
  },
@@ -1911,7 +1919,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
   "miss": 0
  },
@@ -1929,7 +1937,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
   "miss": 0
  },
@@ -1988,10 +1996,14 @@
    {
     "date": "2026-09-10",
     "price": 6999
+   },
+   {
+    "date": "2026-09-22",
+    "price": 6899
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
   "miss": 0
  },
@@ -2029,7 +2041,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
   "miss": 0
  },
@@ -2131,7 +2143,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
   "miss": 0
  },
@@ -2169,7 +2181,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
   "miss": 0
  },
@@ -2247,7 +2259,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
   "miss": 0
  },
@@ -2287,7 +2299,7 @@
   "status": "掲載中",
   "last_seen": "2026-09-20",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
-  "miss": 1
+  "miss": 2
  },
  "https://www.athome.co.jp/mansion/1117884706/": {
   "name": "レーベンリヴァーレ中板橋ヴィーナスタワー 4階 ３ＬＤＫ",
@@ -2323,7 +2335,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
   "miss": 0
  },
@@ -2381,7 +2393,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
   "miss": 0
  },
@@ -2439,7 +2451,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
   "miss": 0
  },
@@ -2461,7 +2473,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
   "miss": 0
  },
@@ -2479,7 +2491,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
   "miss": 0
  },
@@ -2497,7 +2509,7 @@
    }
   ],
   "status": "掲載中",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "image": "/static_app_contents/ak04-20260909-100740/assets/common/loading_g.gif",
   "miss": 0
  },
@@ -2749,7 +2761,7 @@
   ],
   "status": "掲載中",
   "image": "https://www.athome.co.jp/image_files/path/bCx-FF1Z-6ifluIb_8lrMQ==",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "miss": 0
  },
  "https://www.athome.co.jp/mansion/1107988314/": {
@@ -2927,7 +2939,7 @@
   ],
   "status": "掲載中",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F187%2F21696187%2F21696187_0021.jpg&w=192&h=144",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "miss": 0
  },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21205666/": {
@@ -2946,7 +2958,7 @@
   "status": "掲載中",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F666%2F21205666%2F21205666_0025.jpg&w=192&h=144",
   "last_seen": "2026-09-20",
-  "miss": 1
+  "miss": 2
  },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_79070848/": {
   "name": "大山町（大山駅） 1億4800万円",
@@ -2963,7 +2975,7 @@
   ],
   "status": "掲載中",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F848%2F79070848%2F79070848_0005.jpg&w=192&h=144",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "miss": 0
  },
  "https://www.homes.co.jp/mansion/b-1458870000537/": {
@@ -2981,7 +2993,7 @@
   ],
   "status": "掲載中",
   "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F145887%2Fsale%2F537%2F11%2F1%2Fucwx.jpg",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "miss": 0
  },
  "https://www.homes.co.jp/mansion/b-1421770027326/": {
@@ -3000,7 +3012,7 @@
   "status": "掲載中",
   "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F142177%2Fsale%2F27326%2F1%2F2%2F7zyu.jpg",
   "last_seen": "2026-09-20",
-  "miss": 1
+  "miss": 2
  },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21758553/": {
   "name": "大山町（大山駅） 1億1280万円",
@@ -3017,7 +3029,7 @@
   ],
   "status": "掲載中",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F553%2F21758553%2F21758553_0001.jpg&w=192&h=144",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "miss": 0
  },
  "https://www.homes.co.jp/mansion/b-35006120000135/": {
@@ -3035,7 +3047,7 @@
   ],
   "status": "掲載中",
   "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3500612%2Fsale%2F135%2F2%2F2%2Fbfl0.jpg&width=208&height=138",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "miss": 0
  },
  "https://www.homes.co.jp/mansion/b-1392850001629/#room3": {
@@ -3053,7 +3065,7 @@
   ],
   "status": "掲載中",
   "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F139285%2Fsale%2F1629%2F11%2F9%2Fqt31.jpg",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
   "miss": 0
  },
  "https://www.athome.co.jp/mansion/1114358519/": {
@@ -3071,7 +3083,25 @@
   ],
   "status": "掲載中",
   "image": "https://www.athome.co.jp/image_files/path/6FIlT-l3nEHoBXWJIby94g==",
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-22",
+  "miss": 0
+ },
+ "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21763537/": {
+  "name": "9/21価格下がりました 6999万より100万円↓ 初購入をやさしくサポートします",
+  "building": "9/21価格下がりました6999万より100万円↓初購入をやさしくサポートします",
+  "site": "SUUMO",
+  "area": 65.75,
+  "built": "1999年1月",
+  "first_seen": "2026-09-22",
+  "prices": [
+   {
+    "date": "2026-09-22",
+    "price": 6899
+   }
+  ],
+  "status": "掲載中",
+  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F537%2F21763537%2F21763537_0044.jpg&w=192&h=144",
+  "last_seen": "2026-09-22",
   "miss": 0
  }
 }
