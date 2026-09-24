@@ -454,7 +454,7 @@
   "site": "at home",
   "url": "https://www.athome.co.jp/mansion/1195597121/",
   "name": "セザール大山 3階 ３ＬＤＫ",
-  "price": 5180,
+  "price": 4980,
   "area": 58.67,
   "layout": "3LDK",
   "built": "1995年3月（築31年7ヶ月）",
@@ -603,38 +603,5 @@
   "built": "2000年5月（築26年5ヶ月）",
   "image": null,
   "access": "東武東上線 「大山」駅 徒歩10分"
- },
- "https://www.homes.co.jp/mansion/b-1392850001629/#room1": {
-  "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-1392850001629/#room1",
-  "name": "ザ・パークハウス板橋大山大楠ノ杜",
-  "price": 11280,
-  "area": 71.39,
-  "layout": "3LDK",
-  "built": "2023年09月（築4年）",
-  "access": "東武東上線 大山駅 徒歩7分",
-  "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3500612%2Fsale%2F135%2F1%2F1%2Fpgid.jpg"
- },
- "https://www.homes.co.jp/mansion/b-1392850001629/#room2": {
-  "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-1392850001629/#room2",
-  "name": "ザ・パークハウス板橋大山大楠ノ杜",
-  "price": 11780,
-  "area": 76.41,
-  "layout": "3LDK",
-  "built": "2023年09月（築4年）",
-  "access": "東武東上線 大山駅 徒歩7分",
-  "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F150001%2Fsale%2F1043%2F11%2F9%2Ffmgo.jpg"
- },
- "https://www.homes.co.jp/mansion/b-1392850001629/#room3": {
-  "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-1392850001629/#room3",
-  "name": "ザ・パークハウス板橋大山大楠ノ杜",
-  "price": 10800,
-  "area": 68.74,
-  "layout": "3LDK",
-  "built": "2023年09月（築4年）",
-  "access": "東武東上線 大山駅 徒歩7分",
-  "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F139285%2Fsale%2F1629%2F11%2F9%2Fqt31.jpg"
  }
 }
