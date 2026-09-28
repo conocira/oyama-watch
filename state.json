@@ -1,15 +1,4 @@
 {
- "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21763537/": {
-  "site": "SUUMO",
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21763537/",
-  "name": "9/21価格下がりました 6999万より100万円↓ 初購入をやさしくサポートします",
-  "price": 6899,
-  "area": 65.75,
-  "layout": "3LDK",
-  "built": "1999年1月",
-  "access": "東武東上線「大山」徒歩7分",
-  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F537%2F21763537%2F21763537_0044.jpg&w=192&h=144"
- },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21785312/": {
   "site": "SUUMO",
   "url": "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21785312/",
@@ -53,6 +42,17 @@
   "built": "1999年1月",
   "access": "東武東上線「大山」徒歩7分",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F299%2F21354299%2F21354299_0066.jpg&w=192&h=144"
+ },
+ "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21763537/": {
+  "site": "SUUMO",
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21763537/",
+  "name": "9/21価格下がりました 6999万より100万円↓ 初購入をやさしくサポートします",
+  "price": 6899,
+  "area": 65.75,
+  "layout": "3LDK",
+  "built": "1999年1月",
+  "access": "東武東上線「大山」徒歩7分",
+  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F537%2F21763537%2F21763537_0044.jpg&w=192&h=144"
  },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21397346/": {
   "site": "SUUMO",
@@ -174,17 +174,6 @@
   "built": "2012年2月",
   "access": "東武東上線「大山」徒歩4分",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F887%2F21088887%2F21088887_0035.jpg&w=192&h=144"
- },
- "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21696187/": {
-  "site": "SUUMO",
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21696187/",
-  "name": "大山西町（大山駅） 9800万円",
-  "price": 9800,
-  "area": 68.84,
-  "layout": "3LDK",
-  "built": "2005年1月",
-  "access": "東武東上線「大山」徒歩5分",
-  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F187%2F21696187%2F21696187_0021.jpg&w=192&h=144"
  },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21266632/": {
   "site": "SUUMO",
@@ -417,17 +406,6 @@
   "image": null,
   "access": "東武東上線 「大山」駅 徒歩7分"
  },
- "https://www.athome.co.jp/mansion/1021167891/": {
-  "site": "at home",
-  "url": "https://www.athome.co.jp/mansion/1021167891/",
-  "name": "大山パークハウススタイリッシュタワー 16階 ３ＬＤＫ",
-  "price": 9800,
-  "area": 68.84,
-  "layout": "3LDK",
-  "built": "2005年1月（築21年9ヶ月）",
-  "image": null,
-  "access": "東武東上線 「大山」駅 徒歩5分"
- },
  "https://www.athome.co.jp/mansion/1152812814/": {
   "site": "at home",
   "url": "https://www.athome.co.jp/mansion/1152812814/",
@@ -592,5 +570,27 @@
   "built": "2000年5月（築26年5ヶ月）",
   "image": null,
   "access": "東武東上線 「大山」駅 徒歩10分"
+ },
+ "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21696187/": {
+  "site": "SUUMO",
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21696187/",
+  "name": "大山西町（大山駅） 9800万円",
+  "price": 9800,
+  "area": 68.84,
+  "layout": "3LDK",
+  "built": "2005年1月",
+  "access": "東武東上線「大山」徒歩5分",
+  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F187%2F21696187%2F21696187_0021.jpg&w=192&h=144"
+ },
+ "https://www.athome.co.jp/mansion/1021167891/": {
+  "site": "at home",
+  "url": "https://www.athome.co.jp/mansion/1021167891/",
+  "name": "大山パークハウススタイリッシュタワー 16階 ３ＬＤＫ",
+  "price": 9800,
+  "area": 68.84,
+  "layout": "3LDK",
+  "built": "2005年1月（築21年9ヶ月）",
+  "image": null,
+  "access": "東武東上線 「大山」駅 徒歩5分"
  }
 }
