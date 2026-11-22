@@ -10,17 +10,6 @@
   "access": "東武東上線「大山」徒歩5分",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F279%2F22199279%2F22199279_0033.jpg&w=192&h=144"
  },
- "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_22217858/": {
-  "site": "SUUMO",
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_22217858/",
-  "name": "≪いまからのご見学可能です≫ご自宅送迎によるご来店・ご内覧サービス実施中",
-  "price": 6790,
-  "area": 59.52,
-  "layout": "3LDK",
-  "built": "1995年11月",
-  "access": "東武東上線「大山」徒歩5分",
-  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F858%2F22217858%2F22217858_0016.jpg&w=192&h=144"
- },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_22193279/": {
   "site": "SUUMO",
   "url": "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_22193279/",
@@ -32,6 +21,17 @@
   "access": "東武東上線「大山」徒歩5分",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F279%2F22193279%2F22193279_0001.jpg&w=192&h=144"
  },
+ "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_22217858/": {
+  "site": "SUUMO",
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_22217858/",
+  "name": "≪いまからのご見学可能です≫ご自宅送迎によるご来店・ご内覧サービス実施中",
+  "price": 6790,
+  "area": 59.52,
+  "layout": "3LDK",
+  "built": "1995年11月",
+  "access": "東武東上線「大山」徒歩5分",
+  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F858%2F22217858%2F22217858_0016.jpg&w=192&h=144"
+ },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21397346/": {
   "site": "SUUMO",
   "url": "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21397346/",
@@ -41,7 +41,7 @@
   "layout": "3LDK",
   "built": "2006年3月",
   "access": "東武東上線「大山」徒歩8分",
-  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F346%2F21397346%2F21397346_0002.jpg&w=192&h=144"
+  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F346%2F21397346%2F21397346_0019.jpg&w=192&h=144"
  },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_20310847/": {
   "site": "SUUMO",
@@ -178,7 +178,7 @@
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_20746905/": {
   "site": "SUUMO",
   "url": "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_20746905/",
-  "name": "仲町（大山駅） 8590万円",
+  "name": "野村の仲介＋高田馬場センター・最上階10階／南西向き住戸",
   "price": 8590,
   "area": 68.61,
   "layout": "3LDK",
@@ -285,17 +285,6 @@
   "access": "東武東上線「大山」徒歩7分",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F415%2F22145415%2F22145415_0029.jpg&w=192&h=144"
  },
- "https://www.homes.co.jp/mansion/b-35006120000142/": {
-  "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-35006120000142/",
-  "name": "ザ・パークハウス板橋大山大楠ノ杜",
-  "price": 10980,
-  "area": 76.52,
-  "layout": "3LDK",
-  "built": "",
-  "access": "東武東上線 大山駅 徒歩7分",
-  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3500612%2Fsale%2F142%2F2%2F3%2Fnluz.jpg&width=208&height=138"
- },
  "https://www.homes.co.jp/mansion/b-35007060000124/": {
   "site": "HOME'S",
   "url": "https://www.homes.co.jp/mansion/b-35007060000124/",
@@ -307,6 +296,17 @@
   "access": "東武東上線 大山駅 徒歩6分",
   "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3500706%2Fsale%2F124%2F2%2F1%2Fkgwb.jpg&width=208&height=138"
  },
+ "https://www.homes.co.jp/mansion/b-35006120000142/": {
+  "site": "HOME'S",
+  "url": "https://www.homes.co.jp/mansion/b-35006120000142/",
+  "name": "ザ・パークハウス板橋大山大楠ノ杜",
+  "price": 10980,
+  "area": 76.52,
+  "layout": "3LDK",
+  "built": "",
+  "access": "東武東上線 大山駅 徒歩7分",
+  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3500612%2Fsale%2F142%2F2%2F3%2Fnluz.jpg&width=208&height=138"
+ },
  "https://www.homes.co.jp/mansion/b-1267650040272/": {
   "site": "HOME'S",
   "url": "https://www.homes.co.jp/mansion/b-1267650040272/",
@@ -316,7 +316,7 @@
   "layout": "3LDK",
   "built": "1995年11月（築32年）",
   "access": "東武東上線 大山駅 徒歩5分",
-  "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F126765%2Fsale%2F40272%2F11%2F3%2Fpdox.jpg"
+  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F126765%2Fsale%2F40272%2F11%2F3%2Fte52.jpg"
  },
  "https://www.homes.co.jp/mansion/b-1358110013560/": {
   "site": "HOME'S",
@@ -415,7 +415,7 @@
   "layout": "3LDK",
   "built": "2006年03月（築21年）",
   "access": "東武東上線 大山駅 徒歩8分",
-  "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F147298%2Fsale%2F445%2F11%2F3%2Fxs6k.jpg"
+  "image": "https://image2.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F147298%2Fsale%2F445%2F11%2F3%2Fk6a8.jpg"
  },
  "https://www.homes.co.jp/mansion/b-1472980000434/": {
   "site": "HOME'S",
@@ -768,27 +768,5 @@
   "built": "1979年09月（築48年）",
   "access": "東武東上線 大山駅 徒歩9分",
   "image": "https://image1.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F155221%2Fsale%2F4602%2F11%2F7%2Fr6yd.jpg"
- },
- "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_78211665/": {
-  "site": "SUUMO",
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_78211665/",
-  "name": "仲町（大山駅） 7400万円",
-  "price": 7400,
-  "area": 67.62,
-  "layout": "3LDK",
-  "built": "2024年8月",
-  "access": "東武東上線「大山」徒歩9分",
-  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F665%2F78211665%2F78211665_0043.jpg&w=192&h=144"
- },
- "https://www.homes.co.jp/mansion/b-1534610005586/": {
-  "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-1534610005586/",
-  "name": "藤和シティホームズ板橋大山弐番館",
-  "price": 6790,
-  "area": 59.52,
-  "layout": "3LDK",
-  "built": "1995年11月（築32年）",
-  "access": "東武東上線 大山駅 徒歩5分",
-  "image": "https://image3.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F153461%2Fsale%2F5586%2F11%2F1%2F6imz.jpg"
  }
 }
