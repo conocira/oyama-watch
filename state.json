@@ -21,17 +21,6 @@
   "access": "東武東上線「大山」徒歩8分",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F346%2F21397346%2F21397346_0019.jpg&w=192&h=144"
  },
- "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_20310847/": {
-  "site": "SUUMO",
-  "url": "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_20310847/",
-  "name": "【売主物件】◎再開発の進む大山◎南向き×上層階◎リノベ6月末完成",
-  "price": 4299,
-  "area": 64.92,
-  "layout": "3LDK",
-  "built": "1979年9月",
-  "access": "東武東上線「大山」徒歩9分",
-  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F847%2F20310847%2F20310847_0021.jpg&w=192&h=144"
- },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21200038/": {
   "site": "SUUMO",
   "url": "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21200038/",
@@ -97,6 +86,17 @@
   "built": "2023年9月",
   "access": "東武東上線「大山」徒歩7分",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F548%2F22138548%2F22138548_0001.jpg&w=192&h=144"
+ },
+ "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_20310847/": {
+  "site": "SUUMO",
+  "url": "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_20310847/",
+  "name": "【売主物件】◎再開発の進む大山◎南向き×上層階◎リノベ6月末完成",
+  "price": 4299,
+  "area": 64.92,
+  "layout": "3LDK",
+  "built": "1979年9月",
+  "access": "東武東上線「大山」徒歩9分",
+  "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F847%2F20310847%2F20310847_0021.jpg&w=192&h=144"
  },
  "https://suumo.jp/ms/chuko/tokyo/sc_itabashi/nc_21477157/": {
   "site": "SUUMO",
@@ -285,17 +285,6 @@
   "access": "東武東上線「大山」徒歩7分",
   "image": "https://img01.suumo.com/jj/resizeImage?src=gazo%2Fbukken%2F030%2FN010000%2Fimg%2F415%2F22145415%2F22145415_0029.jpg&w=192&h=144"
  },
- "https://www.homes.co.jp/mansion/b-35007060000124/": {
-  "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-35007060000124/",
-  "name": "ジオ板橋大山",
-  "price": 8590,
-  "area": 68.61,
-  "layout": "3LDK",
-  "built": "",
-  "access": "東武東上線 大山駅 徒歩6分",
-  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3500706%2Fsale%2F124%2F2%2F1%2Fkgwb.jpg&width=208&height=138"
- },
  "https://www.homes.co.jp/mansion/b-35006120000142/": {
   "site": "HOME'S",
   "url": "https://www.homes.co.jp/mansion/b-35006120000142/",
@@ -306,6 +295,17 @@
   "built": "",
   "access": "東武東上線 大山駅 徒歩7分",
   "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3500612%2Fsale%2F142%2F2%2F3%2Fnluz.jpg&width=208&height=138"
+ },
+ "https://www.homes.co.jp/mansion/b-35007060000124/": {
+  "site": "HOME'S",
+  "url": "https://www.homes.co.jp/mansion/b-35007060000124/",
+  "name": "ジオ板橋大山",
+  "price": 8590,
+  "area": 68.61,
+  "layout": "3LDK",
+  "built": "",
+  "access": "東武東上線 大山駅 徒歩6分",
+  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3500706%2Fsale%2F124%2F2%2F1%2Fkgwb.jpg&width=208&height=138"
  },
  "https://www.homes.co.jp/mansion/b-1267650040272/": {
   "site": "HOME'S",
@@ -333,7 +333,7 @@
   "site": "HOME'S",
   "url": "https://www.homes.co.jp/mansion/b-1090830005191/#room1",
   "name": "ザ・パークハウス板橋大山大楠ノ杜",
-  "price": 15800,
+  "price": 14990,
   "area": 87.73,
   "layout": "3LDK",
   "built": "2023年09月（築4年）",
@@ -344,6 +344,17 @@
   "site": "HOME'S",
   "url": "https://www.homes.co.jp/mansion/b-1090830005191/#room2",
   "name": "ザ・パークハウス板橋大山大楠ノ杜",
+  "price": 15800,
+  "area": 87.73,
+  "layout": "3LDK",
+  "built": "2023年09月（築4年）",
+  "access": "東武東上線 大山駅 徒歩7分",
+  "image": "https://image3.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3501218%2Fsale%2F56%2F11%2F1%2Fg0id.jpg"
+ },
+ "https://www.homes.co.jp/mansion/b-1090830005191/#room3": {
+  "site": "HOME'S",
+  "url": "https://www.homes.co.jp/mansion/b-1090830005191/#room3",
+  "name": "ザ・パークハウス板橋大山大楠ノ杜",
   "price": 10980,
   "area": 76.52,
   "layout": "3LDK",
@@ -351,9 +362,9 @@
   "access": "東武東上線 大山駅 徒歩7分",
   "image": "https://image.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3500612%2Fsale%2F142%2F11%2F2%2Fw0vu.jpg"
  },
- "https://www.homes.co.jp/mansion/b-1090830005191/#room3": {
+ "https://www.homes.co.jp/mansion/b-1090830005191/#room4": {
   "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-1090830005191/#room3",
+  "url": "https://www.homes.co.jp/mansion/b-1090830005191/#room4",
   "name": "ザ・パークハウス板橋大山大楠ノ杜",
   "price": 11780,
   "area": 76.41,
@@ -505,10 +516,10 @@
   "image": null,
   "access": "東武東上線 「大山」駅 徒歩10分"
  },
- "https://www.athome.co.jp/mansion/1022402991/": {
+ "https://www.athome.co.jp/mansion/1175523637/": {
   "site": "at home",
-  "url": "https://www.athome.co.jp/mansion/1022402991/",
-  "name": "ザ・パークハウス板橋大山大楠ノ杜 5階 ３ＬＤＫ",
+  "url": "https://www.athome.co.jp/mansion/1175523637/",
+  "name": "ザ・パークハウス板橋大山大楠ノ杜 ５１４ ３ＬＤＫ",
   "price": 15800,
   "area": 87.73,
   "layout": "3LDK",
@@ -516,10 +527,10 @@
   "image": null,
   "access": "東武東上線 「大山」駅 徒歩7分"
  },
- "https://www.athome.co.jp/mansion/1175523637/": {
+ "https://www.athome.co.jp/mansion/1022402991/": {
   "site": "at home",
-  "url": "https://www.athome.co.jp/mansion/1175523637/",
-  "name": "ザ・パークハウス板橋大山大楠ノ杜 ５１４ ３ＬＤＫ",
+  "url": "https://www.athome.co.jp/mansion/1022402991/",
+  "name": "ザ・パークハウス板橋大山大楠ノ杜 5階 ３ＬＤＫ",
   "price": 15800,
   "area": 87.73,
   "layout": "3LDK",
@@ -735,27 +746,5 @@
   "built": "2000年5月（築26年7ヶ月）",
   "image": null,
   "access": "東武東上線 「大山」駅 徒歩10分"
- },
- "https://www.homes.co.jp/mansion/b-35006120000135/": {
-  "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-35006120000135/",
-  "name": "ザ・パークハウス板橋大山大楠ノ杜",
-  "price": 10580,
-  "area": 71.39,
-  "layout": "3LDK",
-  "built": "",
-  "access": "東武東上線 大山駅 徒歩7分",
-  "image": "https://image3.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F3500612%2Fsale%2F135%2F2%2F2%2F1r0y.jpg&width=208&height=138"
- },
- "https://www.homes.co.jp/mansion/b-1090830005191/#room4": {
-  "site": "HOME'S",
-  "url": "https://www.homes.co.jp/mansion/b-1090830005191/#room4",
-  "name": "ザ・パークハウス板橋大山大楠ノ杜",
-  "price": 11780,
-  "area": 76.41,
-  "layout": "3LDK",
-  "built": "2023年09月（築4年）",
-  "access": "東武東上線 大山駅 徒歩7分",
-  "image": "https://image4.homes.jp/smallimg/image.php?file=http%3A%2F%2Fimg.homes.jp%2F150001%2Fsale%2F1043%2F11%2F9%2Frz8q.jpg"
  }
 }
